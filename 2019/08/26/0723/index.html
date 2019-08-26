@@ -6,17 +6,24 @@
     
 
     
-    <title>归档 | koala&#39;s blog</title>
+    <title>react学习笔记(二) | koala&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="koala&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+        <meta name="keywords" content="react">
+    
+    <meta name="description" content="react学习(二) 组件复用单项数据流，数据只能从父级组件传给子级。 ref一般的react数据流中，父级与子级是通过props进行沟通，如果要子级发生改变，父级可以改变传入的props.但是有时需要强制修改子级,则要用到ref.适用场景：(1)处理焦点，文本选择，媒体控制(2)触发强制动画(3)集成第三方dom库。 状态提升当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react学习笔记(二)">
+<meta property="og:url" content="http://yoursite.com/2019/08/26/0723/index.html">
 <meta property="og:site_name" content="koala&#39;s blog">
+<meta property="og:description" content="react学习(二) 组件复用单项数据流，数据只能从父级组件传给子级。 ref一般的react数据流中，父级与子级是通过props进行沟通，如果要子级发生改变，父级可以改变传入的props.但是有时需要强制修改子级,则要用到ref.适用场景：(1)处理焦点，文本选择，媒体控制(2)触发强制动画(3)集成第三方dom库。 状态提升当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-26T10:20:09.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="koala&#39;s blog">
+<meta name="twitter:title" content="react学习笔记(二)">
+<meta name="twitter:description" content="react学习(二) 组件复用单项数据流，数据只能从父级组件传给子级。 ref一般的react数据流中，父级与子级是通过props进行沟通，如果要子级发生改变，父级可以改变传入的props.但是有时需要强制修改子级,则要用到ref.适用场景：(1)处理焦点，文本选择，媒体控制(2)触发强制动画(3)集成第三方dom库。 状态提升当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至">
     
 
     
@@ -121,135 +128,164 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>归档
+    <a class="page-title-link" href="/categories/react/">react</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-0723" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/08/26/0723/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/08/26/0723/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/react/">react</a>
-            </div>
-            <div class="date"><time datetime="2019-08-26T10:19:25.186Z" itemprop="datePublished">2019-08-26</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/08/26/0723/">react学习笔记(二)</a>
+        react学习笔记(二)
         </h1>
     
 
-        <p class="article-excerpt">
-            react学习(二)
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/08/26/0723/" class="article-date">
+            <time datetime="2019-08-26T10:19:25.186Z" itemprop="datePublished">2019-08-26</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/react/">react</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="react学习-二"><a href="#react学习-二" class="headerlink" title="react学习(二)"></a>react学习(二)</h2><ol>
+<li>组件复用<br>单项数据流，数据只能从父级组件传给子级。</li>
+<li>ref<br>一般的react数据流中，父级与子级是通过props进行沟通，如果要子级发生改变，父级可以改变传入的props.但是有时需要强制修改子级,则要用到ref.适用场景：<br>(1)处理焦点，文本选择，媒体控制<br>(2)触发强制动画<br>(3)集成第三方dom库。</li>
+<li>状态提升<br>当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至这多个组件的父组件。然后以 props 传递，而对该状态的改变也由父级来控制，子级只是调用父级改变状态的那个方法。</li>
+<li>context<br>在 react 中，数据以自上到下的方向传递，如果一个数据在最顶层，而最底层的组件需要用到这个数据，那么数据需要传递很多层才能到达最底层。这种操作会异常麻烦。<br>顶层父组件中添加 childContextTypes 和 getChildContext,  context 就会向下传递。<br>在需要引入的子组件中添加 contextTypes, 即可以 this.context 获取。</li>
+</ol>
+<h2 id="Redux学习"><a href="#Redux学习" class="headerlink" title="Redux学习"></a>Redux学习</h2><p>npm install redux –save</p>
+<h3 id="1-基础了解"><a href="#1-基础了解" class="headerlink" title="1.基础了解"></a>1.基础了解</h3><ul>
+<li>redux 专注于管理状态，和react解耦</li>
+<li>单一状态，单一数据流</li>
+<li>核心概念：store，state，action，reducer</li>
+<li>store包含所有属性的状态state，当要发生改变时，dispatch方法获取到action，reducer拿到state和action处理变化，生成新的state。<br>===&gt; 首先通过reducer新建store，随时通过store.getState获取状态<br>===&gt;需要状态变更，store.dispatch(action)来修改状态<br>===&gt;reducer 函数接受state和action，返回心得state，可以用store.subscribe监听每次修改。</li>
+<li>与react使用<br>===&gt;把store.dispatch方法传递给组件，内部可以调用修改状态。<br>===&gt;Subscribe订阅render函数，每次修改都重新渲染<br>===&gt;redux相关内容，移交单独的文件index.redux.js单独管理。</li>
+<li>redux 处理异步<br>需要redux-thunk 插件，npm install redux-devtools-extension 开启该调试工具。<h2 id="ant-design"><a href="#ant-design" class="headerlink" title="ant design"></a>ant design</h2></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2019/08/26/0723/" data-id="cjzs9ao7y00013kvpi8nsbrqs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "XHY"
+        },
+        "headline": "react学习笔记(二)",
+        "image": "http://yoursite.com",
+        "keywords": "react",
+        "genre": "react",
+        "datePublished": "2019-08-26",
+        "dateCreated": "2019-08-26",
+        "dateModified": "2019-08-26",
+        "url": "http://yoursite.com/2019/08/26/0723/",
+        "description": "react学习(二)
 组件复用单项数据流，数据只能从父级组件传给子级。
 ref一般的react数据流中，父级与子级是通过props进行沟通，如果要子级发生改变，父级可以改变传入的props.但是有时需要强制修改子级,则要用到ref.适用场景：(1)处理焦点，文本选择，媒体控制(2)触发强制动画(3)集成第三方dom库。
-状态提升当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至
-        </p>
-    </div>
+状态提升当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至"
+        "wordCount": 44
+    }
+</script>
+
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/08/26/0722/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2019/08/26/0722/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/react/">react</a>
-            </div>
-            <div class="date"><time datetime="2019-08-26T10:10:31.204Z" itemprop="datePublished">2019-08-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/08/26/0722/">react学习笔记(一)</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            react学习笔记(一)
-使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。
-还需要用到webpack
-JSX语法
-
-
-(1)class写成className，某写属性比如for 要写成 htmlFor.
-
-(2)属性值使用表达式，只要用 {} 替换 “”:
-
-(3)属性扩散
-var props={};
-props.foo =x;
-pro
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
 
-
-    </div></section>
+    
+    </section>
 
 
 
@@ -279,6 +315,19 @@ pro
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/08/26/0722/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">react学习笔记(一)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -427,11 +476,13 @@ pro
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://yoursite.com/2019/08/26/0723/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
