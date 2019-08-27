@@ -6,24 +6,24 @@
     
 
     
-    <title>react学习笔记(二) | koala&#39;s blog</title>
+    <title>常用数组和字符串方法 | koala&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="react">
+        <meta name="keywords" content="Array,String">
     
-    <meta name="description" content="react学习(二) 组件复用单项数据流，数据只能从父级组件传给子级。 ref一般的react数据流中，父级与子级是通过props进行沟通，如果要子级发生改变，父级可以改变传入的props.但是有时需要强制修改子级,则要用到ref.适用场景：(1)处理焦点，文本选择，媒体控制(2)触发强制动画(3)集成第三方dom库。 状态提升当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至">
-<meta name="keywords" content="react">
+    <meta name="description" content="字符串方法定义一个字符串：  let browserType = ‘mozilla’;   indexOf()找出一个较小的字符串是否存在于一个较大的字符串中  browserType.indexOf(‘zilla’);//output:2browserType.indexOf(‘vanilla’);//output:-1   slice()提取字符串中的子字符串，知道开始的位置，以及结束的字符。">
+<meta name="keywords" content="Array,String">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react学习笔记(二)">
-<meta property="og:url" content="https://koala949.github.io/2019/08/26/0723/index.html">
+<meta property="og:title" content="常用数组和字符串方法">
+<meta property="og:url" content="https://koala949.github.io/2019/08/27/js-数组字符串方法/index.html">
 <meta property="og:site_name" content="koala&#39;s blog">
-<meta property="og:description" content="react学习(二) 组件复用单项数据流，数据只能从父级组件传给子级。 ref一般的react数据流中，父级与子级是通过props进行沟通，如果要子级发生改变，父级可以改变传入的props.但是有时需要强制修改子级,则要用到ref.适用场景：(1)处理焦点，文本选择，媒体控制(2)触发强制动画(3)集成第三方dom库。 状态提升当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至">
+<meta property="og:description" content="字符串方法定义一个字符串：  let browserType = ‘mozilla’;   indexOf()找出一个较小的字符串是否存在于一个较大的字符串中  browserType.indexOf(‘zilla’);//output:2browserType.indexOf(‘vanilla’);//output:-1   slice()提取字符串中的子字符串，知道开始的位置，以及结束的字符。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T10:20:09.921Z">
+<meta property="og:updated_time" content="2019-08-27T03:18:32.780Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react学习笔记(二)">
-<meta name="twitter:description" content="react学习(二) 组件复用单项数据流，数据只能从父级组件传给子级。 ref一般的react数据流中，父级与子级是通过props进行沟通，如果要子级发生改变，父级可以改变传入的props.但是有时需要强制修改子级,则要用到ref.适用场景：(1)处理焦点，文本选择，媒体控制(2)触发强制动画(3)集成第三方dom库。 状态提升当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至">
+<meta name="twitter:title" content="常用数组和字符串方法">
+<meta name="twitter:description" content="字符串方法定义一个字符串：  let browserType = ‘mozilla’;   indexOf()找出一个较小的字符串是否存在于一个较大的字符串中  browserType.indexOf(‘zilla’);//output:2browserType.indexOf(‘vanilla’);//output:-1   slice()提取字符串中的子字符串，知道开始的位置，以及结束的字符。">
     
 
     
@@ -128,19 +128,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/react/">react</a>
+    <a class="page-title-link" href="/categories/Javascript/">Javascript</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-0723" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-js-数组字符串方法" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        react学习笔记(二)
+        常用数组和字符串方法
         </h1>
     
 
@@ -150,8 +150,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/08/26/0723/" class="article-date">
-            <time datetime="2019-08-26T10:19:25.186Z" itemprop="datePublished">2019-08-26</time>
+        <a href="/2019/08/27/js-数组字符串方法/" class="article-date">
+            <time datetime="2019-08-27T03:15:43.884Z" itemprop="datePublished">2019-08-27</time>
         </a>
     </div>
 
@@ -160,27 +160,104 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/react/">react</a>
+        <a class="tag-link" href="/tags/Array/">Array</a>, <a class="tag-link" href="/tags/String/">String</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="react学习-二"><a href="#react学习-二" class="headerlink" title="react学习(二)"></a>react学习(二)</h2><ol>
-<li>组件复用<br>单项数据流，数据只能从父级组件传给子级。</li>
-<li>ref<br>一般的react数据流中，父级与子级是通过props进行沟通，如果要子级发生改变，父级可以改变传入的props.但是有时需要强制修改子级,则要用到ref.适用场景：<br>(1)处理焦点，文本选择，媒体控制<br>(2)触发强制动画<br>(3)集成第三方dom库。</li>
-<li>状态提升<br>当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至这多个组件的父组件。然后以 props 传递，而对该状态的改变也由父级来控制，子级只是调用父级改变状态的那个方法。</li>
-<li>context<br>在 react 中，数据以自上到下的方向传递，如果一个数据在最顶层，而最底层的组件需要用到这个数据，那么数据需要传递很多层才能到达最底层。这种操作会异常麻烦。<br>顶层父组件中添加 childContextTypes 和 getChildContext,  context 就会向下传递。<br>在需要引入的子组件中添加 contextTypes, 即可以 this.context 获取。</li>
+            <h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener">字符串方法</a></h3><p>定义一个字符串：</p>
+<blockquote>
+<p>let browserType = ‘mozilla’;</p>
+</blockquote>
+<ul>
+<li><p>indexOf()<br>找出一个较小的字符串是否存在于一个较大的字符串中</p>
+<blockquote>
+<p>browserType.indexOf(‘zilla’);//output:2<br>browserType.indexOf(‘vanilla’);//output:-1</p>
+</blockquote>
+</li>
+<li><p>slice()<br>提取字符串中的子字符串，知道开始的位置，以及结束的字符。  </p>
+<blockquote>
+<p>browserType.slice(0,3); //output:moz  </p>
+</blockquote>
+<p>如果想知道在某个字符之后提取字符串中的所有剩余字符，则不必包含第二个参数，而只需要包含要从中提取的字符位置 字符串中的其余字符。  </p>
+<blockquote>
+<p> browserType.slice(2);//output:’zilla’</p>
+</blockquote>
+</li>
+<li><p>toLowerCase()、toUpperCase()<br>将所有字符分别转换为小写或大写</p>
+</li>
+<li><p>replace()<br>将字符串中的一个子字符串替换为另一个子字符串,它需要两个参数 - 要被替换下的字符串和要被替换上的字符串。</p>
+<blockquote>
+<p>browserType = browserType.replace(‘moz’,’van’);。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">数组方法</a></h3><p>介绍一些相当有用的数组方法，这些方法允许我们将字符串拆分为字符串数组，反之亦然，以及添加或删除元素。</p>
+<ol>
+<li>字符串和数组之间的转换</li>
 </ol>
-<h2 id="Redux学习"><a href="#Redux学习" class="headerlink" title="Redux学习"></a>Redux学习</h2><p>npm install redux –save</p>
-<h3 id="1-基础了解"><a href="#1-基础了解" class="headerlink" title="1.基础了解"></a>1.基础了解</h3><ul>
-<li>redux 专注于管理状态，和react解耦</li>
-<li>单一状态，单一数据流</li>
-<li>核心概念：store，state，action，reducer</li>
-<li>store包含所有属性的状态state，当要发生改变时，dispatch方法获取到action，reducer拿到state和action处理变化，生成新的state。<br>===&gt; 首先通过reducer新建store，随时通过store.getState获取状态<br>===&gt;需要状态变更，store.dispatch(action)来修改状态<br>===&gt;reducer 函数接受state和action，返回心得state，可以用store.subscribe监听每次修改。</li>
-<li>与react使用<br>===&gt;把store.dispatch方法传递给组件，内部可以调用修改状态。<br>===&gt;Subscribe订阅render函数，每次修改都重新渲染<br>===&gt;redux相关内容，移交单独的文件index.redux.js单独管理。</li>
-<li>redux 处理异步<br>需要redux-thunk 插件，npm install redux-devtools-extension 开启该调试工具。<h2 id="ant-design"><a href="#ant-design" class="headerlink" title="ant design"></a>ant design</h2></li>
+<ul>
+<li><p>split():<br>作为字符串方法，我们提供一个参数，作为字符串分割的字符，并返回分隔符之间的字串，作为数组中的项。</p>
+<p>(1)创建字符串</p>
+<blockquote>
+<p>let myData = ‘Manchester,London,liverpool,leeds’</p>
+</blockquote>
+<p>  (2)用逗号分隔：</p>
+<blockquote>
+<p>let myArray = myData.split(‘,’);<br>console.log(myArray)</p>
+</blockquote>
+<p>(3)可以使用<code>join()</code> 方法进行相反的操作</p>
+<blockquote>
+<p>let myNewString = myArray.join(‘,’);</p>
+</blockquote>
+</li>
+<li><p>toString():<br>将数组转换为字符串的另一种方法，可以比<code>join()</code>更简单，因为它不需要一个参数，但更有限制，使用<code>join()</code>可以指定不同的分隔符</p>
+<blockquote>
+<p>let dogNames = [“Rocket”,”Flash”,”Bella”,”Slugger”];<br>dogNames.toString(); //Rocket,Flash,Bella,Slugger</p>
+</blockquote>
+</li>
+</ul>
+<ol start="2">
+<li>添加和删除数组项</li>
+</ol>
+<ul>
+<li>push()<br>需要添加一个或多个到数组末尾的元素时使用<blockquote>
+<p>myArray.push(‘Cardiff’);</p>
+</blockquote>
+</li>
+<li>pop()<br>从数组中删除最后一个元素，直接使用<blockquote>
+<p>myArray.pop();</p>
+</blockquote>
+</li>
+<li>unshift()、 shift()<br>从功能上与 push() 和 pop() 完全相同，只是它们分别作用于数组的开始，而不是结尾。</li>
+</ul>
+<p>3.练习过的</p>
+<ul>
+<li><p>map()：<br>创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。map 不修改调用它的原数组本身。</p>
+<blockquote>
+<p> var new_array = arr.map(function callback(currentValue[   index[, array]]) { </p>
+<pre><code>}[, thisArg])</code></pre></blockquote>
+<p>callback:生成新数组元素的函数，使用三个参数：<br>currentValue:callback 数组中正在处理的当前元素。<br>index可选:callback 数组中正在处理的当前元素的索引。<br>array可选:callback map 方法被调用的数组。<br>thisArg可选:执行 callback 函数时使用的this 值。  </p>
+</li>
+<li><p>every():<br>测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。</p>
+<blockquote>
+<p>arr.every(callback[, thisArg])  </p>
+</blockquote>
+<p>例子:</p>
+<pre><code>function isBigEnough(element, index, array) {
+return element &gt;= 10;
+}
+[12, 5, 8, 130, 44].every(isBigEnough);   // false
+[12, 5, 8, 130, 44].every(x =&gt; x &gt;= 10); //箭头函数 false</code></pre></li>
+<li><p>some()<br>测试是否至少有一个元素可以通过被提供的函数方法。该方法返回一个Boolean类型的值。</p>
+</li>
+<li><p>filter()<br>创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。 </p>
+<blockquote>
+<p>var newArray = arr.filter(callback(element[, index[, array]])[, thisArg])<br>const result = words.filter(word =&gt; word.length &gt; 6);</p>
+</blockquote>
+</li>
 </ul>
 
         </div>
@@ -189,7 +266,7 @@
 
 
 
-    <a data-url="https://koala949.github.io/2019/08/26/0723/" data-id="cjzsabdg60000kovpcwfejz19" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koala949.github.io/2019/08/27/js-数组字符串方法/" data-id="cjzt9hnvi00006gvplfq9956t" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -259,19 +336,26 @@
             "@type": "Person",
             "name": "XHY"
         },
-        "headline": "react学习笔记(二)",
+        "headline": "常用数组和字符串方法",
         "image": "https://koala949.github.io",
-        "keywords": "react",
-        "genre": "react",
-        "datePublished": "2019-08-26",
-        "dateCreated": "2019-08-26",
-        "dateModified": "2019-08-26",
-        "url": "https://koala949.github.io/2019/08/26/0723/",
-        "description": "react学习(二)
-组件复用单项数据流，数据只能从父级组件传给子级。
-ref一般的react数据流中，父级与子级是通过props进行沟通，如果要子级发生改变，父级可以改变传入的props.但是有时需要强制修改子级,则要用到ref.适用场景：(1)处理焦点，文本选择，媒体控制(2)触发强制动画(3)集成第三方dom库。
-状态提升当多个组件依赖某个状态或者多个组件会影响到某个状态，此时将该状态提升至"
-        "wordCount": 44
+        "keywords": "Array String",
+        "genre": "Javascript",
+        "datePublished": "2019-08-27",
+        "dateCreated": "2019-08-27",
+        "dateModified": "2019-08-27",
+        "url": "https://koala949.github.io/2019/08/27/js-数组字符串方法/",
+        "description": "字符串方法定义一个字符串：
+
+let browserType = ‘mozilla’;
+
+
+indexOf()找出一个较小的字符串是否存在于一个较大的字符串中
+
+browserType.indexOf(‘zilla’);//output:2browserType.indexOf(‘vanilla’);//output:-1
+
+
+slice()提取字符串中的子字符串，知道开始的位置，以及结束的字符。"
+        "wordCount": 118
     }
 </script>
 
@@ -299,7 +383,7 @@ ref一般的react数据流中，父级与子级是通过props进行沟通，如�
             
                 
                 <li>
-                    <a class="social-tooltip" title="github" href="https://koala949.github.io" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="github" href="https://github.com/koala949" target="_blank" rel="noopener">
                         <i class="icon fa fa-github"></i>
                     </a>
                 </li>
@@ -344,7 +428,7 @@ ref一般的react数据流中，父级与子级是通过props进行沟通，如�
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/08/26/0723/" class="thumbnail">
+                            <a href="/2019/08/27/js-数组字符串方法/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -355,9 +439,9 @@ ref一般的react数据流中，父级与子级是通过props进行沟通，如�
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/react/">react</a></p>
-                            <p class="item-title"><a href="/2019/08/26/0723/" class="title">react学习笔记(二)</a></p>
-                            <p class="item-date"><time datetime="2019-08-26T10:19:25.186Z" itemprop="datePublished">2019-08-26</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2019/08/27/js-数组字符串方法/" class="title">常用数组和字符串方法</a></p>
+                            <p class="item-date"><time datetime="2019-08-27T03:15:43.884Z" itemprop="datePublished">2019-08-27</time></p>
                         </div>
                     </li>
                 
@@ -390,7 +474,7 @@ ref一般的react数据流中，父级与子级是通过props进行沟通，如�
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -410,7 +494,7 @@ ref一般的react数据流中，父级与子级是通过props进行沟通，如�
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -420,7 +504,7 @@ ref一般的react数据流中，父级与子级是通过props进行沟通，如�
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/react/" style="font-size: 10px;">react</a>
+            <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
         </div>
     </div>
 
@@ -476,7 +560,7 @@ ref一般的react数据流中，父级与子级是通过props进行沟通，如�
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://koala949.github.io/2019/08/26/0723/';
+    var disqus_url = 'https://koala949.github.io/2019/08/27/js-数组字符串方法/';
     
     (function() {
     var dsq = document.createElement('script');
