@@ -6,24 +6,24 @@
     
 
     
-    <title>js中常用数组和字符串方法 | koala&#39;s blog</title>
+    <title>react学习笔记(三) | koala&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Array,String,Javascript">
+        <meta name="keywords" content="react,saga">
     
-    <meta name="description" content="字符串方法首先定义一个字符串： let browserType = &amp;apos;mozilla&amp;apos;; indexOf()找出一个较小的字符串是否存在于一个较大的字符串中 browserType.indexOf(&amp;apos;zilla&amp;apos;);//output:2 browserType.indexOf(&amp;apos;vanilla&amp;apos;);//output:-1 slice(">
-<meta name="keywords" content="Array,String,Javascript">
+    <meta name="description" content="redux-saga学习直接模拟示例：在我们开始前，clone 这个教程仓库从最简单的用例开始：2个按钮增加(increment)和减少(decrement)计数，之后再添加异步。   (1)创建sagas.js文件，添加以下代码： 123export function *helloSaga()&amp;#123;    console.log(&amp;apos;Hello Sagas!&amp;apos;)&amp;#125">
+<meta name="keywords" content="react,saga">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中常用数组和字符串方法">
-<meta property="og:url" content="https://koala949.github.io/2019/08/27/js-数组字符串方法/index.html">
+<meta property="og:title" content="react学习笔记(三)">
+<meta property="og:url" content="https://koala949.github.io/2019/08/29/react-saga/index.html">
 <meta property="og:site_name" content="koala&#39;s blog">
-<meta property="og:description" content="字符串方法首先定义一个字符串： let browserType = &amp;apos;mozilla&amp;apos;; indexOf()找出一个较小的字符串是否存在于一个较大的字符串中 browserType.indexOf(&amp;apos;zilla&amp;apos;);//output:2 browserType.indexOf(&amp;apos;vanilla&amp;apos;);//output:-1 slice(">
+<meta property="og:description" content="redux-saga学习直接模拟示例：在我们开始前，clone 这个教程仓库从最简单的用例开始：2个按钮增加(increment)和减少(decrement)计数，之后再添加异步。   (1)创建sagas.js文件，添加以下代码： 123export function *helloSaga()&amp;#123;    console.log(&amp;apos;Hello Sagas!&amp;apos;)&amp;#125">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-27T03:32:51.843Z">
+<meta property="og:updated_time" content="2019-08-30T02:29:46.650Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中常用数组和字符串方法">
-<meta name="twitter:description" content="字符串方法首先定义一个字符串： let browserType = &amp;apos;mozilla&amp;apos;; indexOf()找出一个较小的字符串是否存在于一个较大的字符串中 browserType.indexOf(&amp;apos;zilla&amp;apos;);//output:2 browserType.indexOf(&amp;apos;vanilla&amp;apos;);//output:-1 slice(">
+<meta name="twitter:title" content="react学习笔记(三)">
+<meta name="twitter:description" content="redux-saga学习直接模拟示例：在我们开始前，clone 这个教程仓库从最简单的用例开始：2个按钮增加(increment)和减少(decrement)计数，之后再添加异步。   (1)创建sagas.js文件，添加以下代码： 123export function *helloSaga()&amp;#123;    console.log(&amp;apos;Hello Sagas!&amp;apos;)&amp;#125">
     
 
     
@@ -128,19 +128,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Javascript/">Javascript</a>
+    <a class="page-title-link" href="/categories/react/">react</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-js-数组字符串方法" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-react-saga" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        js中常用数组和字符串方法
+        react学习笔记(三)
         </h1>
     
 
@@ -150,8 +150,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/08/27/js-数组字符串方法/" class="article-date">
-            <time datetime="2019-08-27T03:15:43.884Z" itemprop="datePublished">2019-08-27</time>
+        <a href="/2019/08/29/react-saga/" class="article-date">
+            <time datetime="2019-08-29T11:09:05.841Z" itemprop="datePublished">2019-08-29</time>
         </a>
     </div>
 
@@ -160,81 +160,46 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Array/">Array</a>, <a class="tag-link" href="/tags/Javascript/">Javascript</a>, <a class="tag-link" href="/tags/String/">String</a>
+        <a class="tag-link" href="/tags/react/">react</a>, <a class="tag-link" href="/tags/saga/">saga</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <a id="more"></a>
+            <h2 id="redux-saga学习"><a href="#redux-saga学习" class="headerlink" title="redux-saga学习"></a>redux-saga学习</h2><p>直接模拟示例：<br>在我们开始前，clone 这个<a href="https://github.com/redux-saga/redux-saga-beginner-tutorial" target="_blank" rel="noopener">教程仓库</a><br>从最简单的用例开始：2个按钮增加(increment)和减少(decrement)计数，之后再添加异步。  </p>
+<p>(1)创建sagas.js文件，添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export function *helloSaga()&#123;</span><br><span class="line">    console.log(&apos;Hello Sagas!&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener">字符串方法</a></h3><p>首先定义一个字符串：</p>
-<pre><code>let browserType = &apos;mozilla&apos;;</code></pre><ul>
-<li><p>indexOf()<br>找出一个较小的字符串是否存在于一个较大的字符串中</p>
-<pre><code>browserType.indexOf(&apos;zilla&apos;);//output:2
-browserType.indexOf(&apos;vanilla&apos;);//output:-1</code></pre></li>
-<li><p>slice()<br>提取字符串中的子字符串，知道开始的位置，以及结束的字符。 </p>
-<pre><code>browserType.slice(0,3); //output:moz  </code></pre><p>如果想知道在某个字符之后提取字符串中的所有剩余字符，则不必包含第二个参数，而只需要包含要从中提取的字符位置 字符串中的其余字符。  </p>
-<pre><code>browserType.slice(2);//output:&apos;zilla&apos;</code></pre></li>
-<li><p>toLowerCase()、toUpperCase()<br>将所有字符分别转换为小写或大写</p>
-</li>
-<li><p>replace()<br>将字符串中的一个子字符串替换为另一个子字符串,它需要两个参数 - 要被替换下的字符串和要被替换上的字符串。</p>
-<pre><code>browserType = browserType.replace(&apos;moz&apos;,&apos;van&apos;);。</code></pre></li>
-</ul>
-<h3 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">数组方法</a></h3><p>介绍一些相当有用的数组方法，这些方法允许我们将字符串拆分为字符串数组，反之亦然，以及添加或删除元素。</p>
-<ol>
-<li>字符串和数组之间的转换</li>
-</ol>
-<ul>
-<li><p>split():<br>作为字符串方法，我们提供一个参数，作为字符串分割的字符，并返回分隔符之间的字串，作为数组中的项。</p>
-<p>(1)创建字符串</p>
-<pre><code>let myData = &apos;Manchester,London,liverpool,leeds&apos;</code></pre><p>  (2)用逗号分隔：</p>
-<pre><code>let myArray = myData.split(&apos;,&apos;);
-console.log(myArray)</code></pre><p>(3)可以使用<code>join()</code> 方法进行相反的操作</p>
-<pre><code>let myNewString = myArray.join(&apos;,&apos;);</code></pre></li>
-<li><p>toString():<br>将数组转换为字符串的另一种方法，可以比<code>join()</code>更简单，因为它不需要一个参数，但更有限制，使用<code>join()</code>可以指定不同的分隔符</p>
-<pre><code>let dogNames = [&quot;Rocket&quot;,&quot;Flash&quot;,&quot;Bella&quot;,&quot;Slugger&quot;];
-dogNames.toString(); //Rocket,Flash,Bella,Slugger</code></pre></li>
-</ul>
-<ol start="2">
-<li>添加和删除数组项</li>
-</ol>
-<ul>
-<li><p>push()<br>需要添加一个或多个到数组末尾的元素时使用</p>
-<pre><code>myArray.push(&apos;Cardiff&apos;);</code></pre></li>
-<li><p>pop()<br>从数组中删除最后一个元素，直接使用</p>
-<pre><code>myArray.pop();</code></pre></li>
-<li><p>unshift()、 shift()<br>从功能上与 push() 和 pop() 完全相同，只是它们分别作用于数组的开始，而不是结尾。</p>
-</li>
-</ul>
-<p>3.练习过的</p>
-<ul>
-<li><p>map()：<br>创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。map 不修改调用它的原数组本身。</p>
-<pre><code>var new_array = arr.map(function callback(currentValue[   index[, array]]) { 
-  }[, thisArg])</code></pre><p>callback:生成新数组元素的函数，使用三个参数：<br>currentValue:callback 数组中正在处理的当前元素。<br>index可选:callback 数组中正在处理的当前元素的索引。<br>array可选:callback map 方法被调用的数组。<br>thisArg可选:执行 callback 函数时使用的this 值。  </p>
-</li>
-<li><p>every():<br>测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。</p>
-<pre><code>arr.every(callback[, thisArg])  </code></pre><p>例子:</p>
-<pre><code>function isBigEnough(element, index, array) {
-return element &gt;= 10;
-}
-[12, 5, 8, 130, 44].every(isBigEnough);   // false
-[12, 5, 8, 130, 44].every(x =&gt; x &gt;= 10); //箭头函数 false</code></pre></li>
-<li><p>some()<br>测试是否至少有一个元素可以通过被提供的函数方法。该方法返回一个Boolean类型的值。</p>
-</li>
-<li><p>filter()<br>创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。 </p>
-<pre><code>var newArray = arr.filter(callback(element[, index[, array]])[, thisArg])  
-const result = words.filter(word =&gt; word.length &gt; 6);</code></pre></li>
-</ul>
+<p>为了运行saga,需要：<br>创建一个Saga middleware 和要运行的 Sagas(目前只有helloSaga)<br>将这个 Saga middleware 连接至 Redux store</p>
+<p>(2)修改 main.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createStore , applyMiddleware &#125; from &apos;redux&apos;</span><br><span class="line">import createSagaMiddleware from &apos;redux-saga&apos;</span><br><span class="line"></span><br><span class="line">//...</span><br><span class="line">import &#123; helloSaga &#125; from &apos;./sagas&apos;</span><br><span class="line"></span><br><span class="line">const store = createStore(</span><br><span class="line">    reducer,</span><br><span class="line">    applyMiddleware( createSagaMiddleware(helloSaga))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
+<p>引入./sagas模块中的Saga，使用redux-saga 模块中的createSagaMiddleware工厂函数来创建一个Saga middleware。  </p>
+<p>在运行helloSaga之前，必须使用applyMiddleware将middleware连接至Store，然后使用SagaMiddleware.run(helloSaga)运行Saga。打印一条消息。</p>
+<p>(3)发起异步调用<br>来添加一些更接近原始计数器例子的东西。为了演示异步调用，添加另一个按钮用于在点击一秒后增加技术。<br>在UI组件上添加一个额外的按钮和一个回调onIncrementAsync。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const Counter = (&#123; value, onIncrement, onDecrement, onIncrementAsync&#125;) =&gt;</span><br><span class="line">&lt;div&gt; </span><br><span class="line">  &lt;button onClick=&#123; onIncrementAsync&#125;&gt; increment after 1 second &lt;/button&gt;</span><br><span class="line">  &#123; &apos; &apos;&#125;</span><br><span class="line">  &lt;button onClick=&#123; onIncrement&#125;&gt;Increment&lt;/button&gt;</span><br><span class="line">  &#123;&apos; &apos;&#125;</span><br><span class="line">   &lt;button onClick=&#123;onDecrement&#125;&gt;</span><br><span class="line">      Decrement</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">    &lt;hr /&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      Clicked: &#123;value&#125; times</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>(4)将组件的onIncrementAsync 与 Store action 连接起来。</p>
+<p>修改main.js  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function render()&#123;</span><br><span class="line">    ReactDOM.render(</span><br><span class="line">        &lt;Counter</span><br><span class="line">        value=&#123;store.getState()&#125;</span><br><span class="line">        onIncrement = &#123;()=&gt;action(&apos;INCREMENT&apos;)&#125;</span><br><span class="line">        onIncrement = &#123;()=&gt;action(&apos;DECREMENT&apos;)&#125;</span><br><span class="line">        onIncrementAsync = &#123;()=&gt; action(&apos;INCREMENT_ASYNC&apos;)&#125; /&gt;,</span><br><span class="line">        document.getElementById(&apos;root&apos;)</span><br><span class="line"></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该组件dispatch的是一个 plain Object 的action。</p>
+<p>(5)现添加另一种执行异步调用的Saga，用例如下：<br>在每个 INCREMENT_ASYNC action 启动一个做以下事情的任务：<br>等待1秒，然后增加计数。<br>sagas.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import &#123; delay &#125; from &apos;redux-saga&apos;</span><br><span class="line">import &#123; put, takeEvery &#125; from &apos;redux-saga/effects&apos;</span><br><span class="line"></span><br><span class="line">// Our worker Saga: 将执行异步的 increment 任务</span><br><span class="line">export function* incrementAsync() &#123;</span><br><span class="line">  yield delay(1000)</span><br><span class="line">  yield put(&#123; type: &apos;INCREMENT&apos; &#125;)</span><br><span class="line">&#125;</span><br><span class="line">// Our watcher Saga: 在每个 INCREMENT_ASYNC action spawn 一个新的 incrementAsync 任务</span><br><span class="line">export function* watchIncrementAsync() &#123;</span><br><span class="line">  yield takeEvery(&apos;INCREMENT_ASYNC&apos;, incrementAsync)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(6)现在我们有了 2 个 Sagas，我们需要同时启动它们。为了做到这一点，我们将添加一个 rootSaga，负责启动其他的 Sagas。<br>在同样的 sagas.js 文件中，添加内容：   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export default function* rootSaga() &#123;</span><br><span class="line">  yield all([</span><br><span class="line">    helloSaga(),</span><br><span class="line">    watchIncrementAsync()</span><br><span class="line">  ])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(7)在 main.js 的 root Saga 中调用 sagaMiddleware.run。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// ...</span><br><span class="line">import rootSaga from &apos;./sagas&apos;</span><br><span class="line"></span><br><span class="line">const sagaMiddleware = createSagaMiddleware()</span><br><span class="line">const store = ...</span><br><span class="line">sagaMiddleware.run(rootSaga)</span><br><span class="line"></span><br><span class="line">// ...</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://koala949.github.io/2019/08/27/js-数组字符串方法/" data-id="ck0dlsjtd000008vp7kkwgw74" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koala949.github.io/2019/08/29/react-saga/" data-id="ck0dlsjto000408vp0u413xyl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -304,23 +269,18 @@ const result = words.filter(word =&gt; word.length &gt; 6);</code></pre></li>
             "@type": "Person",
             "name": "XHY"
         },
-        "headline": "js中常用数组和字符串方法",
+        "headline": "react学习笔记(三)",
         "image": "https://koala949.github.io",
-        "keywords": "Array String Javascript",
-        "genre": "Javascript",
-        "datePublished": "2019-08-27",
-        "dateCreated": "2019-08-27",
-        "dateModified": "2019-08-27",
-        "url": "https://koala949.github.io/2019/08/27/js-数组字符串方法/",
-        "description": "
-
-字符串方法首先定义一个字符串：
-let browserType = &apos;mozilla&apos;;
-indexOf()找出一个较小的字符串是否存在于一个较大的字符串中
-browserType.indexOf(&apos;zilla&apos;);//output:2
-browserType.indexOf(&apos;vanilla&apos;);//output:-1
-slice("
-        "wordCount": 120
+        "keywords": "react saga",
+        "genre": "react",
+        "datePublished": "2019-08-29",
+        "dateCreated": "2019-08-29",
+        "dateModified": "2019-08-30",
+        "url": "https://koala949.github.io/2019/08/29/react-saga/",
+        "description": "redux-saga学习直接模拟示例：在我们开始前，clone 这个教程仓库从最简单的用例开始：2个按钮增加(increment)和减少(decrement)计数，之后再添加异步。  
+(1)创建sagas.js文件，添加以下代码：
+123export function *helloSaga()&#123;    console.log(&apos;Hello Sagas!&apos;)&#125"
+        "wordCount": 449
     }
 </script>
 
@@ -368,20 +328,20 @@ slice("
         
 <nav id="article-nav">
     
-        <a href="/2019/08/27/Mocha测试/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/09/10/react-router/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            es6练习
+            react学习笔记(四)
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2019/08/26/react-基础/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/08/29/react-redux/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">react学习笔记(一)</p>
+        <p class="article-nav-title">react学习笔记(二)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -595,7 +555,7 @@ slice("
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://koala949.github.io/2019/08/27/js-数组字符串方法/';
+    var disqus_url = 'https://koala949.github.io/2019/08/29/react-saga/';
     
     (function() {
     var dsq = document.createElement('script');

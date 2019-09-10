@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>react学习笔记(一) | koala&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="react,key,Context">
+    
+    <meta name="description" content="react学习笔记(一)基础 使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。  还需要用到webpack  JSX语法">
+<meta name="keywords" content="react,key,Context">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react学习笔记(一)">
+<meta property="og:url" content="https://koala949.github.io/2019/08/26/react-基础/index.html">
+<meta property="og:site_name" content="koala&#39;s blog">
+<meta property="og:description" content="react学习笔记(一)基础 使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。  还需要用到webpack  JSX语法">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-28T12:32:43.263Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react学习笔记(一)">
+<meta name="twitter:description" content="react学习笔记(一)基础 使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。  还需要用到webpack  JSX语法">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">慢慢来，请相信自己 。</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/react/">react</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-react-基础" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        react学习笔记(一)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/08/26/react-基础/" class="article-date">
+            <time datetime="2019-08-26T10:10:31.204Z" itemprop="datePublished">2019-08-26</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Context/">Context</a>, <a class="tag-link" href="/tags/key/">key</a>, <a class="tag-link" href="/tags/react/">react</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="react学习笔记-一"><a href="#react学习笔记-一" class="headerlink" title="react学习笔记(一)"></a>react学习笔记(一)</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ol>
+<li><p>使用脚手架create-react-app,安装好之后了解结构。<br>yarn.lock 定义了当前使用的确切版本。</p>
+</li>
+<li><p>还需要用到<a href="http://caibaojian.com/react/webpack.html" target="_blank" rel="noopener">webpack</a></p>
+</li>
+<li><p>JSX语法</p>
+<a id="more"></a>
+<p>(1)class写成className，某写属性比如for 要写成 htmlFor.<br>(2)属性值使用表达式，只要用 {} 替换 “”:<br>(3)属性扩散</p>
+<pre><code>var props={};
+props.foo =x;
+props.bar =y;
+var component = &lt;Component {...props}/&gt;</code></pre><p> props对象的属性会被设置成Component的属性。</p>
+</li>
+</ol>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><h4 id="1-相关基础"><a href="#1-相关基础" class="headerlink" title="1.相关基础"></a>1.相关基础</h4><p>直观的将一个复杂的页面分割成若干个独立组件，每个组件包含自己的逻辑和样式，既减少逻辑复杂度，又实现代码重用。</p>
+<ul>
+<li><p>两种组件定义方式：<br>(1)函数声明<br>函数参数是属性对象,首字母一定是大写，定义完之后可以像react元素一样使用。<br>组件的渲染过程：封装props对象，调用组件函数得到返回的React元素，ReactDOM把元素转成真实的DOM元素并插入到目标容器。</p>
+<pre><code>let Message = (props)=&gt;{
+    return &lt;h1&gt;{props.msg}&lt;/h1&gt;
+}
+或
+let Message = ({msg，id}) =&gt;{
+    return &lt;h1&gt;{msg}&lt;/h1&gt;
+}
+render(&lt;Message msg=&apos;hello&apos; id=&quot;5&quot;/&gt;, document.querySelector(&apos;#root&apos;))</code></pre><p>函数声明的组件是静态的，否则要手动添加。</p>
+<pre><code>setInterval(function(){
+    render(&lt;Clock/&gt;,...)
+},1000)</code></pre><p> (2)类声明<br>通过类声明组件，类需要继承自Component</p>
+<pre><code>class Clock extends Component{
+    constructor(){
+        super();//自定义组件状态对象
+        //状态可以用来存放组件内部一些变化的值，
+        this.state = {time:new Date().toLocalString()}
+    }
+    //生命周期函数
+    componentDidMount(){
+        window.setInterval(()=&gt;{
+            this.setState({
+                time:new Date().toLocalString()})
+        },1000);
+    }
+}</code></pre></li>
+<li><p>组件属性<br>(1) 默认属性<br><code>static defaultProps ={ name:&#39;aaa&#39;}</code><br>(2) 如果定义组件时希望传入组件的属性有类型和是否必填的限制，则使用ProTypes。<br>组件的属性可以接受任意值，字符串、对象、函数。使用组件的proType属性，验证组件的实例属性是否符合要求。</p>
+<pre><code>var MyTitle = React.creatClass({
+    proTypes:{
+        title : React.ProTypes.string.isRequired,
+    },
+    render: function(){
+        return &lt;h1&gt;{this.props.title}&lt;/h1&gt;
+    }
+}
+var data = 123;
+ReactDom.render(&lt;MyTile title={data}/&gt;,document.body);
+验证不通过。</code></pre><p>(3) React 提供React.Children 来处理this.props.children,可以用React.Children.map来遍历子节点。</p>
+<p>(4) Object.assign方法用来将源对象（source）的所有可枚举属性，复制到目标对象（target）。它至少需要两个对象作为参数，第一个参数是目标对象，后面的参数都是源对象。</p>
+</li>
+</ul>
+<h4 id="2-组件的生命周期"><a href="#2-组件的生命周期" class="headerlink" title="2.组件的生命周期"></a>2.组件的生命周期</h4><p>一般一个组件类由<code>extends Component</code> 创建，并且提供render方法以及其他可选的生命周期函数、组件相关的事件或方法来定义。</p>
+<ul>
+<li><p>getInitialState<br> 初始化 this.state 的值，只在组件装载之前调用一次。<br> 如果是使用 ES6 的语法，也可以在构造函数中初始化状态，比如：</p>
+<pre><code>class Counter extends Component {
+  constructor(props) {
+      super(props);
+      this.state = { count: props.initialCount };
+  }
+  render() {
+      // ...
+  }
+  }</code></pre></li>
+<li><p>render(必须)       </p>
+<ol>
+<li><p>react 构建用户界面的库，其元素是JSX元素，其实使用JS来描述页面对象。<br>render的含义就是把一个react元素渲染到dom 容器内部。</p>
+<pre><code>reactDoM.render(
+      React.createElement(&apos;div&apos;,null,[React.createElement(&apos;span&apos;,null,[&apos;hello&apos;])]),
+      document.querySelector(&apos;#root&apos;));</code></pre><p>标签类型，属性对象，子元素。属性名都要写成驼峰写法。   </p>
+<pre><code>//经过webpack转译后会变成以下形式。
+ ReactDOM.render(&lt;div&gt;
+ &lt;span&gt;hello&lt; /sapn&gt;
+ &lt;/div&gt;,docoment.querySelector(&apos;#root&apos;));</code></pre></li>
+<li><p>小示例：map使用，加key，设置样式和类名  </p>
+<pre><code>let names = [&apos;一&apos;，&apos;二&apos; ,&apos;三&apos;]
+ReactDom.render(&lt;div&gt;{
+    names.map(function (item,index){
+       return item.length&gt;0?&lt;span style={{backgroundColor:'pink'}}
+    className = &quot;red&quot;
+    key={index}&gt;{item}&lt;/span&gt;:null
+    })
+}&lt;/div&gt;,document.querySelector(&apos;#root&apos;));
+
+//有条件的渲染：
+return item.length&gt;0?</code></pre></li>
+</ol>
+</li>
+<li><p>装载组件触发<br>(1)componentWillMount()<br>  只会在装载之前调用一次，在<code>render</code>之前调用，可以在这个方法里面调用 setState 改变状态。<br>(2)componentDidMount()<br> 只会在装载完成之后调用一次，在 render 之后调用，从这里开始可以通过 ReactDOM.findDOMNode(this) 获取到组件的 DOM 节点。</p>
+</li>
+<li><p>更新组件触发、卸载组件触发。</p>
+</li>
+</ul>
+<h4 id="3-事件处理"><a href="#3-事件处理" class="headerlink" title="3.事件处理"></a>3.事件处理</h4><p>React 事件的命名采用小驼峰式（camelCase），而不是纯小写。<br>使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串。<br><code>&lt;button onClick={activateLasers}&gt;Activate Lasers&lt;/button&gt;</code></p>
+<p>react 不能通过返回false的方式阻止默认行为，必须显示的使用的preventDefault。例如阻止链接默认打开一个新页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function ActionLink()&#123;</span><br><span class="line">    function handleClick(e)&#123;</span><br><span class="line">        e.preventDefault();</span><br><span class="line">        console.log(&apos;the link was clicked&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">return (</span><br><span class="line">  &lt;a href=&quot;#&quot; onclick=&#123;handleClick&#125;&gt;Click me&lt;/a&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>当使用 es6 class 语法定义一个组件时，通常是将事件处理函数声明为class 中的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Toggle extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;isToggleOn: true&#125;;</span><br><span class="line"></span><br><span class="line">    // 为了在回调中使用 `this`，这个绑定是必不可少的</span><br><span class="line">    this.handleClick = this.handleClick.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    this.setState(state =&gt; (&#123;</span><br><span class="line">      isToggleOn: !state.isToggleOn</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;button onClick=&#123;this.handleClick&#125;&gt;</span><br><span class="line">        &#123;this.state.isToggleOn ? &apos;ON&apos; : &apos;OFF&apos;&#125;</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Toggle /&gt;,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>要注意的是，class 方法默认不会绑定this.<br>如果没有使用class fields语法，可以在回调中使用箭头函数：<br><code>&lt;button onClick={(e) =&gt; this.handleClick(e)}&gt;Click me&lt;/button&gt;</code></p>
+<h4 id="4-组合组件"><a href="#4-组合组件" class="headerlink" title="4.组合组件"></a>4.组合组件</h4><p>使用组件的目的就是通过构建模块化的组件，相互组合组件最后组装成一个复杂的应用，在react组件中要包含其他组件作为子组件，只需要把组件当做一个DOM元素引入。</p>
+<p>一个例子：一个显示用户头像的组件 Avatar 包含两个子组件 ProfilePic 显示用户头像和 ProfileLink 显示用户链接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line">import &#123;render&#125; from &apos;react-dom&apos;;</span><br><span class="line"></span><br><span class="line">const ProfilePic = (props) =&gt;&#123;</span><br><span class="line">    return(&lt;img src=&#123;&apos;http://graph.facebook.com/&apos; + props.username + &apos;/picture&apos;&#125;&gt;/)</span><br><span class="line">&#125;</span><br><span class="line">const ProfileLink = (props) =&gt;&#123;</span><br><span class="line">    return (&lt;a href=&#123;&apos;http://www.facebook.com/&apos;+ props.username&#125;&gt;&#123;props.username&#125;&lt;/a&gt;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const Avatar = (props)=&gt;&#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;profilePic username=&#123;props.username&#125;/&gt;</span><br><span class="line">            &lt;profileLink username=&#123;props.username&#125;/&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render(</span><br><span class="line">    &lt;Avatar username = &apos;xhy&apos;/&gt;,</span><br><span class="line">    document.getElementById(&apos;example&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>循环插入子组件<br>如果组件中包含通过循环插入的子组件，为了重新渲染UI的时候能够正确显示这些子元素，每个元素需要通过一个特殊的key属性指定一个唯一值.<br>当元素没有确定 id 的时候，万不得已可以使用元素索引 index 作为 key。<br>key必须在循环中设置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function ListItem(props) &#123;</span><br><span class="line">  // 正确！这里不需要指定 key：</span><br><span class="line">  return &lt;li&gt;&#123;props.value&#125;&lt;/li&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function NumberList(props) &#123;</span><br><span class="line">  const numbers = props.numbers;</span><br><span class="line">  const listItems = numbers.map((number) =&gt;</span><br><span class="line">    // 正确！key 应该在数组的上下文中被指定</span><br><span class="line">    &lt;ListItem key=&#123;number.toString()&#125;</span><br><span class="line">              value=&#123;number&#125; /&gt;</span><br><span class="line"></span><br><span class="line">  );</span><br><span class="line">  return (</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &#123;listItems&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">const numbers = [1, 2, 3, 4, 5];</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;NumberList numbers=&#123;numbers&#125; /&gt;,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>this.props.children<br>组件标签里面包含的子元素会通过 <code>props.children</code>传递进来<br> <code>React.render(&lt;Parent&gt;&lt;Child /&gt;&lt;/Parent&gt;, document.body);</code><br> <code>React.render(&lt;Parent&gt;&lt;span&gt;hello&lt;/span&gt;{&#39;world&#39;}&lt;/Parent&gt;, document.body);</code></p>
+<p>一般来说，可以直接将这个属性作为父组件的子元素render：<br> <code>const Parent = (props) =&gt; &lt;div&gt;{props.children}&lt;/div&gt;</code></p>
+</li>
+</ul>
+<h4 id="5-组件间通信"><a href="#5-组件间通信" class="headerlink" title="5.组件间通信"></a>5.组件间通信</h4><ul>
+<li>父子组件间的通信<br>很简单，就是通过props属性传递，在父组件给子组件设置 props,然后子组件就可以通过props访问到父组件的数据和方法。</li>
+</ul>
+<p>多个组件需要反映相同的变化数据，这时我们建议将共享状态提升到最近的共同父组件中去。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">const scaleName = &#123;</span><br><span class="line">    c:&apos;Celsius&apos;,</span><br><span class="line">    f:&apos;Fahrenheit&apos;</span><br><span class="line">&#125;</span><br><span class="line">class TemperatureInput extends React.Component&#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props)</span><br><span class="line">        this.handleChange = this.handleChange.bind(this)</span><br><span class="line">        this.state = &#123;temperature: &apos;&apos;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    handleChange(e)&#123;</span><br><span class="line">        &lt;!-- this.setState(&#123; temperature: e.target.value &#125;); --&gt;</span><br><span class="line">         this.props.onTemperatureChange(e.target.value);</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        const temperature = this.props.temperature;</span><br><span class="line">        const scale =  this.props.scale;</span><br><span class="line">        return(</span><br><span class="line">            &lt;fieldset&gt;</span><br><span class="line">               &lt;legend&gt;Enter temperature in &#123;scaleNames[scale]&#125;:&lt;/legend&gt;</span><br><span class="line">               &lt;input value=&#123; temperature &#125;</span><br><span class="line">                 onChange=&#123;this.handleChange&#125;/&gt;</span><br><span class="line">            &lt;/fieldset&gt;</span><br><span class="line">        )  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//在父组件中：</span><br><span class="line"> class Calculator extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.handleCelsiusChange = this.handleCelsiusChange.bind(this);</span><br><span class="line">    this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);</span><br><span class="line">    this.state = &#123;temperature: &apos;&apos;, scale: &apos;c&apos;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleCelsiusChange(temperature) &#123;</span><br><span class="line">    this.setState(&#123;scale: &apos;c&apos;, temperature&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleFahrenheitChange(temperature) &#123;</span><br><span class="line">    this.setState(&#123;scale: &apos;f&apos;, temperature&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    const scale = this.state.scale;</span><br><span class="line">    const temperature = this.state.temperature;</span><br><span class="line">    const celsius = scale === &apos;f&apos; ? tryConvert(temperature, toCelsius) : temperature;</span><br><span class="line">    const fahrenheit = scale === &apos;c&apos; ? tryConvert(temperature, toFahrenheit) : temperature;</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;TemperatureInput scale=&quot;c&quot; </span><br><span class="line">         temperature=&#123;celsius&#125;</span><br><span class="line">         onTemperatureChange=&#123;this.handleCelsiusChange&#125; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;TemperatureInput scale=&quot;f&quot; </span><br><span class="line">        temperature=&#123;fahrenheit&#125;</span><br><span class="line">        onTemperatureChange=&#123;this.handleFahrenheitChange&#125; /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>无论编辑哪个输入框的内容，Calculator 组件中的 this.state.temperature 和 this.state.scale 均会被更新。其中一个输入框保留用户的输入并取值，另一个输入框始终基于这个值显示转换后的结果。</p>
+<ul>
+<li>context<br>在 react 中，数据以自上到下的方向传递，如果一个数据在最顶层，而最底层的组件需要用到这个数据，那么数据需要传递很多层才能到达最底层。这种操作会异常麻烦。<br>顶层父组件中添加 childContextTypes 和 getChildContext,  context 就会向下传递。<br>在需要引入的子组件中添加 contextTypes, 即可以 this.context 获取。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">//为当前的theme创建一个context</span><br><span class="line">const ThemeContext = React.createContext(&apos;light&apos;)</span><br><span class="line"></span><br><span class="line">class App extends React.Component &#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        //使用一个Provider来将当前的theme传递给一下的组件树，无论多深，任何组价都能读取到这个值</span><br><span class="line">        //在这个例子中，将dark作为当前值传递下去</span><br><span class="line">        return (</span><br><span class="line">            &lt;ThemeContext.Provider value=&quot;dark&quot;&gt;</span><br><span class="line">               &lt;Toolbar/&gt;</span><br><span class="line">            &lt;/ThemeContext.Provider&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//中间的组件再也不必指明向下传递theme</span><br><span class="line">function Toolbar(props)&#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;ThemeButton&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class ThemeButton extends React.Component &#123;</span><br><span class="line">    //指定contextType 读取当前的 theme context。</span><br><span class="line">    //react 会往上找到最近的theme Provider，然后使用它的值</span><br><span class="line">    static contextType =  ThemeContext;</span><br><span class="line">    render()&#123;</span><br><span class="line">      return &lt;Button theme=&#123;this.context&#125;&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h4><p>对DOM进行模拟，比较操作前后的数据差异，如果有数据差异，同意操作DOM.<br>(1)受控组件<br>(2)非受控组件</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://koala949.github.io/2019/08/26/react-基础/" data-id="ck0dlsjyb001308vp8av1fflk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "XHY"
+        },
+        "headline": "react学习笔记(一)",
+        "image": "https://koala949.github.io",
+        "keywords": "react key Context",
+        "genre": "react",
+        "datePublished": "2019-08-26",
+        "dateCreated": "2019-08-26",
+        "dateModified": "2019-08-28",
+        "url": "https://koala949.github.io/2019/08/26/react-基础/",
+        "description": "react学习笔记(一)基础
+使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。
+
+还需要用到webpack
+
+JSX语法"
+        "wordCount": 1653
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/koala949" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/08/27/js-数组字符串方法/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            js中常用数组和字符串方法
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/10/react-router/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/react/">react</a></p>
+                            <p class="item-title"><a href="/2019/09/10/react-router/" class="title">react学习笔记(四)</a></p>
+                            <p class="item-date"><time datetime="2019-09-10T02:44:56.509Z" itemprop="datePublished">2019-09-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/29/react-saga/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/react/">react</a></p>
+                            <p class="item-title"><a href="/2019/08/29/react-saga/" class="title">react学习笔记(三)</a></p>
+                            <p class="item-date"><time datetime="2019-08-29T11:09:05.841Z" itemprop="datePublished">2019-08-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/29/react-redux/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/react/">react</a></p>
+                            <p class="item-title"><a href="/2019/08/29/react-redux/" class="title">react学习笔记(二)</a></p>
+                            <p class="item-date"><time datetime="2019-08-29T02:36:31.897Z" itemprop="datePublished">2019-08-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/28/git-操作/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/常用/">常用</a></p>
+                            <p class="item-title"><a href="/2019/08/28/git-操作/" class="title">git命令</a></p>
+                            <p class="item-date"><time datetime="2019-08-28T12:32:56.283Z" itemprop="datePublished">2019-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/27/md规范/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cdn.nlark.com/lark/0/2018/png/6815/1536750657227-b4f53ae3-ee09-4b39-b53c-c5b8fbeb8f60.png)" alt="markdown写作规范" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/常用/">常用</a></p>
+                            <p class="item-title"><a href="/2019/08/27/md规范/" class="title">markdown写作规范</a></p>
+                            <p class="item-date"><time datetime="2019-08-27T09:24:19.342Z" itemprop="datePublished">2019-08-27</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用/">常用</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Context/">Context</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/key/">key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-router/">react-router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/saga/">saga</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/key/" style="font-size: 10px;">key</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 10px;">react-router</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/saga/" style="font-size: 10px;">saga</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 XHY</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://koala949.github.io/2019/08/26/react-基础/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -6,24 +6,24 @@
     
 
     
-    <title>react学习笔记(一) | koala&#39;s blog</title>
+    <title>es6练习 | koala&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="react">
+        <meta name="keywords" content="es6">
     
-    <meta name="description" content="react学习笔记(一) 使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。 还需要用到webpack JSX语法">
-<meta name="keywords" content="react">
+    <meta name="description" content="一、测试框架 Mocha的理解1.安装mocha2.了解测试脚本：12345678describe(&amp;apos;加法函数的测试&amp;apos;, function() &amp;#123;      //测试套件函数，表示一组测试（“测试套件名称”，要执行的函数）  it(&amp;apos;1 加 1 应该等于 2&amp;apos;, function() &amp;#123;      //可以有多个it-测试用例块。（测试用">
+<meta name="keywords" content="es6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react学习笔记(一)">
-<meta property="og:url" content="https://koala949.github.io/2019/08/26/0722/index.html">
+<meta property="og:title" content="es6练习">
+<meta property="og:url" content="https://koala949.github.io/2019/08/27/Mocha测试/index.html">
 <meta property="og:site_name" content="koala&#39;s blog">
-<meta property="og:description" content="react学习笔记(一) 使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。 还需要用到webpack JSX语法">
+<meta property="og:description" content="一、测试框架 Mocha的理解1.安装mocha2.了解测试脚本：12345678describe(&amp;apos;加法函数的测试&amp;apos;, function() &amp;#123;      //测试套件函数，表示一组测试（“测试套件名称”，要执行的函数）  it(&amp;apos;1 加 1 应该等于 2&amp;apos;, function() &amp;#123;      //可以有多个it-测试用例块。（测试用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T12:08:19.160Z">
+<meta property="og:updated_time" content="2019-08-27T09:30:22.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react学习笔记(一)">
-<meta name="twitter:description" content="react学习笔记(一) 使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。 还需要用到webpack JSX语法">
+<meta name="twitter:title" content="es6练习">
+<meta name="twitter:description" content="一、测试框架 Mocha的理解1.安装mocha2.了解测试脚本：12345678describe(&amp;apos;加法函数的测试&amp;apos;, function() &amp;#123;      //测试套件函数，表示一组测试（“测试套件名称”，要执行的函数）  it(&amp;apos;1 加 1 应该等于 2&amp;apos;, function() &amp;#123;      //可以有多个it-测试用例块。（测试用">
     
 
     
@@ -128,19 +128,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/react/">react</a>
+    <a class="page-title-link" href="/categories/Javascript/">Javascript</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-0722" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Mocha测试" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        react学习笔记(一)
+        es6练习
         </h1>
     
 
@@ -150,8 +150,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/08/26/0722/" class="article-date">
-            <time datetime="2019-08-26T10:10:31.204Z" itemprop="datePublished">2019-08-26</time>
+        <a href="/2019/08/27/Mocha测试/" class="article-date">
+            <time datetime="2019-08-27T09:17:57.178Z" itemprop="datePublished">2019-08-27</time>
         </a>
     </div>
 
@@ -160,108 +160,21 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/react/">react</a>
+        <a class="tag-link" href="/tags/es6/">es6</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="react学习笔记-一"><a href="#react学习笔记-一" class="headerlink" title="react学习笔记(一)"></a>react学习笔记(一)</h2><ol>
-<li>使用脚手架create-react-app,安装好之后了解结构。<br>yarn.lock 定义了当前使用的确切版本。</li>
-<li>还需要用到<a href="http://caibaojian.com/react/webpack.html" target="_blank" rel="noopener">webpack</a></li>
-<li>JSX语法<a id="more"></a></li>
-</ol>
-<ul>
-<li><p>(1)class写成className，某写属性比如for 要写成 htmlFor.</p>
-</li>
-<li><p>(2)属性值使用表达式，只要用 {} 替换 “”:</p>
-</li>
-<li><p>(3)属性扩散</p>
-<pre><code>var props={};
-props.foo =x;
-props.bar =y;
-var component = &lt;Component {...props}/&gt;</code></pre><p>  props对象的属性会被设置成Component的属性。</p>
-</li>
-</ul>
-<ol start="4">
-<li>render渲染       </li>
-</ol>
-<ul>
-<li><p>react 构建用户界面的库，其元素是JSX元素，其实使用JS来描   述页面对象。<br>render的含义就是把一个react元素渲染到dom 容器内部。</p>
-<pre><code>reactDoM.render(
-      React.createElement(&apos;div&apos;,null,[React.createElement(&apos;span&apos;,null,[&apos;hello&apos;])]),
-      document.querySelector(&apos;#root&apos;));</code></pre><p>标签类型，属性对象，子元素。属性名都要写成驼峰写法。<br>//经过webpack转译后会变成以下形式。</p>
-<pre><code>ReactDOM.render(&lt;div&gt;
-&lt;span&gt;hello&lt; /sapn&gt;
-&lt;/div&gt;,docoment.querySelector(&apos;#root&apos;));</code></pre></li>
-<li><p>小示例：map使用，加key，设置样式和类名  </p>
-<pre><code>let names = [&apos;一&apos;，&apos;二&apos; ,&apos;三&apos;]
-ReactDom.render(&lt;div&gt;{
-    names.map(function (item,index){
-return item.length&gt;0?&lt;span style={{backgroundColor:'pink'}}
-    className = &quot;red&quot;
-    key={index}&gt;{item}&lt;/span&gt;:null
-    })
-}&lt;/div&gt;,document.querySelector(&apos;#root&apos;));
+            <h2 id="一、测试框架-Mocha的理解"><a href="#一、测试框架-Mocha的理解" class="headerlink" title="一、测试框架 Mocha的理解"></a>一、测试框架 Mocha的理解</h2><h3 id="1-安装mocha"><a href="#1-安装mocha" class="headerlink" title="1.安装mocha"></a>1.安装mocha</h3><h3 id="2-了解测试脚本："><a href="#2-了解测试脚本：" class="headerlink" title="2.了解测试脚本："></a>2.了解测试脚本：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">describe(&apos;加法函数的测试&apos;, function() &#123;  </span><br><span class="line">    //测试套件函数，表示一组测试（“测试套件名称”，要执行的函数）</span><br><span class="line">  it(&apos;1 加 1 应该等于 2&apos;, function() &#123;  </span><br><span class="line">    //可以有多个it-测试用例块。（测试用例名称，执行函数）</span><br><span class="line">    expect(add(1, 1)).to.be.equal(2);  </span><br><span class="line">    //断言</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-//有条件的渲染：
-return item.length&gt;0?</code></pre></li>
-</ul>
-<p><strong>tips:</strong></p>
-<ul>
-<li><p>设置数据一定要用setState,如果没用箭头函数则要进行绑定。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.handle =thid.handle.bind(this)</span><br><span class="line">handle = ()=&gt;&#123;</span><br><span class="line">    this.setState&#123;</span><br><span class="line">        reflash=1,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>没有default时，引用要有{}</p>
-</li>
-</ul>
-<ol start="5">
-<li>组件   </li>
-</ol>
-<ul>
-<li><p>直观的将一个复杂的页面分割成若干个独立组件，每个组件包含自己的逻辑和样式，既减少逻辑复杂度，又实现代码重用。<br>两种组件定义方式：<br>(1)函数声明<br>函数参数是属性对象,首字母一定是大写，定义完之后可以像react元素一样使用。<br>组件的渲染过程：封装props对象，调用组件函数得到返回的React元素，ReactDOM把元素转成真实的DOM元素并插入到目标容器。</p>
-<pre><code> let Message = (props)=&gt;{
-     return &lt;h1&gt;{props.msg}&lt;/h1&gt;
- }或
- let Message = ({msg，id}) =&gt;{
-     return &lt;h1&gt;{msg}&lt;/h1&gt;
- }
- render(&lt;Message msg=&apos;hello&apos; id=&quot;5&quot;/&gt;,...)
-// 解构： import ReactDom,{render} from &apos;react-dom&apos;;</code></pre><p>函数声明的组件是静态的，否则要手动添加。<br>  setInterval(function(){</p>
-<pre><code>render(&lt;Clock/&gt;,...)</code></pre><p>  },1000)</p>
-<p> (2)类声明<br>通过类声明组件，类需要继承自Component</p>
-<pre><code>class Clock extends Component{
-    constructor(){
-        super();//自定义组件状态对象
-        //状态可以用来存放组件内部一些变化的值，
-        this.state = {time:new Date().toLocalString()}
-    }
-    //生命周期函数
-    componentDidMount(){
-        window.setInterval(()=&gt;{
-            this.setState({
-                time:new Date().toLocalString()})
-        },1000);
-    }
-}</code></pre></li>
-<li><p>组件属性<br>(1) 默认属性<br>static defaultProps ={ name:’aaa’}<br>(2) 如果定义组件时希望传入组件的属性有类型和是否必填的限制，则使用ProTypes。<br>组件的属性可以接受任意值，字符串、对象、函数。使用组件的proType属性，验证组件的实例属性是否符合要求。</p>
-<pre><code>var MyTitle = React.creatClass({
-    proTypes:{
-        title : React.ProTypes.string.isRequired,
-    },
-    render: function(){
-        return &lt;h1&gt;{this.props.title}&lt;/h1&gt;
-    }
-}
-var data = 123;
-ReactDom.render(&lt;MyTile title={data}/&gt;,document.body);
-验证不通过。</code></pre><p>(3) React 提供React.Children 来处理this.props.children,可以用React.Children.map来遍历子节点。</p>
-<p>(4) Object.assign方法用来将源对象（source）的所有可枚举属性，复制到目标对象（target）。它至少需要两个对象作为参数，第一个参数是目标对象，后面的参数都是源对象。</p>
-</li>
-</ul>
-<ol start="6">
-<li>虚拟DOM<br>对DOM进行模拟，比较操作前后的数据差异，如果有数据差异，同意操作DOM.<br>(1)受控组件<br>(2)非受控组件</li>
+<h2 id="二、练习网址"><a href="#二、练习网址" class="headerlink" title="二、练习网址"></a>二、练习网址</h2><h3 id="点击开始答题"><a href="#点击开始答题" class="headerlink" title="点击开始答题"></a><a href="https://yunqiangwu.github.io/es6katas.org/" target="_blank" rel="noopener">点击开始答题</a></h3><h3 id="推荐练习顺序"><a href="#推荐练习顺序" class="headerlink" title="推荐练习顺序"></a>推荐练习顺序</h3><ol>
+<li>Number、Array、Block scope、Destructuring、Object literal、Set、Arrow functions、Rest operator、Spread operator、Default parameters</li>
+<li>String、Template strings</li>
+<li>Class、Modules、Object、Iterator、</li>
+<li>Promise、Generator</li>
+<li>Map、Symbol、Unicode、Reflect</li>
 </ol>
 
         </div>
@@ -270,7 +183,7 @@ ReactDom.render(&lt;MyTile title={data}/&gt;,document.body);
 
 
 
-    <a data-url="https://koala949.github.io/2019/08/26/0722/" data-id="cjzse9bl90001w0vp0n0wva90" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koala949.github.io/2019/08/27/Mocha测试/" data-id="ck0dlsjtq000508vplnumnt92" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -340,19 +253,16 @@ ReactDom.render(&lt;MyTile title={data}/&gt;,document.body);
             "@type": "Person",
             "name": "XHY"
         },
-        "headline": "react学习笔记(一)",
+        "headline": "es6练习",
         "image": "https://koala949.github.io",
-        "keywords": "react",
-        "genre": "react",
-        "datePublished": "2019-08-26",
-        "dateCreated": "2019-08-26",
-        "dateModified": "2019-08-26",
-        "url": "https://koala949.github.io/2019/08/26/0722/",
-        "description": "react学习笔记(一)
-使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。
-还需要用到webpack
-JSX语法"
-        "wordCount": 301
+        "keywords": "es6",
+        "genre": "Javascript",
+        "datePublished": "2019-08-27",
+        "dateCreated": "2019-08-27",
+        "dateModified": "2019-08-27",
+        "url": "https://koala949.github.io/2019/08/27/Mocha测试/",
+        "description": "一、测试框架 Mocha的理解1.安装mocha2.了解测试脚本：12345678describe(&apos;加法函数的测试&apos;, function() &#123;      //测试套件函数，表示一组测试（“测试套件名称”，要执行的函数）  it(&apos;1 加 1 应该等于 2&apos;, function() &#123;      //可以有多个it-测试用例块。（测试用"
+        "wordCount": 92
     }
 </script>
 
@@ -400,16 +310,22 @@ JSX语法"
         
 <nav id="article-nav">
     
-        <a href="/2019/08/27/js-数组字符串方法/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/08/27/md规范/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            常用数组和字符串方法
+            markdown写作规范
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
+    
+        <a href="/2019/08/27/js-数组字符串方法/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">js中常用数组和字符串方法</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -429,27 +345,7 @@ JSX语法"
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/08/27/js-数组字符串方法/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a></p>
-                            <p class="item-title"><a href="/2019/08/27/js-数组字符串方法/" class="title">常用数组和字符串方法</a></p>
-                            <p class="item-date"><time datetime="2019-08-27T03:15:43.884Z" itemprop="datePublished">2019-08-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/08/26/0722/" class="thumbnail">
+                            <a href="/2019/09/10/react-router/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -461,8 +357,88 @@ JSX语法"
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/react/">react</a></p>
-                            <p class="item-title"><a href="/2019/08/26/0722/" class="title">react学习笔记(一)</a></p>
-                            <p class="item-date"><time datetime="2019-08-26T10:10:31.204Z" itemprop="datePublished">2019-08-26</time></p>
+                            <p class="item-title"><a href="/2019/09/10/react-router/" class="title">react学习笔记(四)</a></p>
+                            <p class="item-date"><time datetime="2019-09-10T02:44:56.509Z" itemprop="datePublished">2019-09-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/29/react-saga/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/react/">react</a></p>
+                            <p class="item-title"><a href="/2019/08/29/react-saga/" class="title">react学习笔记(三)</a></p>
+                            <p class="item-date"><time datetime="2019-08-29T11:09:05.841Z" itemprop="datePublished">2019-08-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/29/react-redux/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/react/">react</a></p>
+                            <p class="item-title"><a href="/2019/08/29/react-redux/" class="title">react学习笔记(二)</a></p>
+                            <p class="item-date"><time datetime="2019-08-29T02:36:31.897Z" itemprop="datePublished">2019-08-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/28/git-操作/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/常用/">常用</a></p>
+                            <p class="item-title"><a href="/2019/08/28/git-操作/" class="title">git命令</a></p>
+                            <p class="item-date"><time datetime="2019-08-28T12:32:56.283Z" itemprop="datePublished">2019-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/27/md规范/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cdn.nlark.com/lark/0/2018/png/6815/1536750657227-b4f53ae3-ee09-4b39-b53c-c5b8fbeb8f60.png)" alt="markdown写作规范" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/常用/">常用</a></p>
+                            <p class="item-title"><a href="/2019/08/27/md规范/" class="title">markdown写作规范</a></p>
+                            <p class="item-date"><time datetime="2019-08-27T09:24:19.342Z" itemprop="datePublished">2019-08-27</time></p>
                         </div>
                     </li>
                 
@@ -475,7 +451,7 @@ JSX语法"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用/">常用</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -485,7 +461,7 @@ JSX语法"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -495,7 +471,7 @@ JSX语法"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Context/">Context</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/key/">key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-router/">react-router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/saga/">saga</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -505,7 +481,7 @@ JSX语法"
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/react/" style="font-size: 10px;">react</a>
+            <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/key/" style="font-size: 10px;">key</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 10px;">react-router</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/saga/" style="font-size: 10px;">saga</a>
         </div>
     </div>
 
@@ -561,7 +537,7 @@ JSX语法"
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://koala949.github.io/2019/08/26/0722/';
+    var disqus_url = 'https://koala949.github.io/2019/08/27/Mocha测试/';
     
     (function() {
     var dsq = document.createElement('script');
