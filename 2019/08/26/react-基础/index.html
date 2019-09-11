@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="koala&#39;s blog">
 <meta property="og:description" content="react学习笔记(一)基础 使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。  还需要用到webpack  JSX语法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-28T12:32:43.263Z">
+<meta property="og:updated_time" content="2019-09-11T03:15:49.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react学习笔记(一)">
 <meta name="twitter:description" content="react学习笔记(一)基础 使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。  还需要用到webpack  JSX语法">
@@ -182,8 +182,9 @@ var component = &lt;Component {...props}/&gt;</code></pre><p> props对象的属�
 </li>
 </ol>
 <h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><h4 id="1-相关基础"><a href="#1-相关基础" class="headerlink" title="1.相关基础"></a>1.相关基础</h4><p>直观的将一个复杂的页面分割成若干个独立组件，每个组件包含自己的逻辑和样式，既减少逻辑复杂度，又实现代码重用。</p>
+<p>1.智能组件：简称页面，只对数据负责，只需要获取了数据，定义好相关函数，然后将这些数据、函数直接传递给具体实现的组件。<br>2.木偶组件：从智能组件那里接收到数据和函数，就开始做一些展示工作。</p>
 <ul>
-<li><p>两种组件定义方式：<br>(1)函数声明<br>函数参数是属性对象,首字母一定是大写，定义完之后可以像react元素一样使用。<br>组件的渲染过程：封装props对象，调用组件函数得到返回的React元素，ReactDOM把元素转成真实的DOM元素并插入到目标容器。</p>
+<li><p>组件定义方式：<br>(1)函数声明<br>函数参数是属性对象,首字母一定是大写，定义完之后可以像react元素一样使用。<br>组件的渲染过程：封装props对象，调用组件函数得到返回的React元素，ReactDOM把元素转成真实的DOM元素并插入到目标容器。</p>
 <pre><code>let Message = (props)=&gt;{
     return &lt;h1&gt;{props.msg}&lt;/h1&gt;
 }
@@ -262,7 +263,7 @@ return item.length&gt;0?</code></pre></li>
 </li>
 <li><p>装载组件触发<br>(1)componentWillMount()<br>  只会在装载之前调用一次，在<code>render</code>之前调用，可以在这个方法里面调用 setState 改变状态。<br>(2)componentDidMount()<br> 只会在装载完成之后调用一次，在 render 之后调用，从这里开始可以通过 ReactDOM.findDOMNode(this) 获取到组件的 DOM 节点。</p>
 </li>
-<li><p>更新组件触发、卸载组件触发。</p>
+<li><p>更新组件触发、卸载组件触发。<br>(1)shouldComponentUpdate:用于性能优化<br>(2)componentDidUpdate:组件更新了之后触发的事件，一般用于清空并更新数据<br>(3)componentWillUnmount：组件在销毁之前触发的事件，一般用户存储一些特殊信息，以及清理setTimeOut,setInterval事件</p>
 </li>
 </ul>
 <h4 id="3-事件处理"><a href="#3-事件处理" class="headerlink" title="3.事件处理"></a>3.事件处理</h4><p>React 事件的命名采用小驼峰式（camelCase），而不是纯小写。<br>使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串。<br><code>&lt;button onClick={activateLasers}&gt;Activate Lasers&lt;/button&gt;</code></p>
@@ -298,6 +299,12 @@ return item.length&gt;0?</code></pre></li>
 </li>
 </ul>
 <h4 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h4><p>对DOM进行模拟，比较操作前后的数据差异，如果有数据差异，同意操作DOM.<br>(1)受控组件<br>(2)非受控组件</p>
+<h3 id="react性能优化"><a href="#react性能优化" class="headerlink" title="react性能优化"></a>react性能优化</h3><ol>
+<li>性能检测工具 npm i react-addons-pref –save 然后在index.js中：<br>import Pref from ‘react-addons-pref’<br>if(<em>DEV</em>){<br> window.Pref = Pref<br>}<br>运行程序，在操作之前先运行Pref.start()开始检测，然后进行若干操作，运行Pref.stop停止检测，然后再运行Pref.printWasted()即可打印出浪费性能的组件列表。</li>
+<li>PureRenderMixin优化<br>安装工具：npm i react-addons-pure-render-mixin –save,然后在组件引用并使用：<br>import PureRenderMixin from ‘react-addons-pure-render-mixin’<br>constructor(props,context){<br>…super(props,context);<br>this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)<br>} 重写组件的shouldComponentUpdate函数，在每次更新之前判断props和state，如果有变化则返回true。</li>
+<li>Immutable.js优化<br>使用Immutable.js来处理数据，其中实现了js中不可变数据的概念，当数据结构层初不深时没必要用。尽量把数据结构设计的扁平一些，即有助于优化系统性能，又减少了开发复杂度和开发成本。<br>小记录：onKeyUpHandler(e){<br> const value= this.state.value<br> if(e.keyCode ===13 &amp;&amp; value.trim()){<pre><code>this.props.submitFn(value)
+this.setState({value:&apos; &apos;})</code></pre> }<br>}</li>
+</ol>
 
         </div>
         <footer class="article-footer">
@@ -305,7 +312,7 @@ return item.length&gt;0?</code></pre></li>
 
 
 
-    <a data-url="https://koala949.github.io/2019/08/26/react-基础/" data-id="ck0dlvn6n0014ykvpgl99rzqi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koala949.github.io/2019/08/26/react-基础/" data-id="ck0f24ca70018e4vp3grv8c6n" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -381,7 +388,7 @@ return item.length&gt;0?</code></pre></li>
         "genre": "react",
         "datePublished": "2019-08-26",
         "dateCreated": "2019-08-26",
-        "dateModified": "2019-08-28",
+        "dateModified": "2019-09-11",
         "url": "https://koala949.github.io/2019/08/26/react-基础/",
         "description": "react学习笔记(一)基础
 使用脚手架create-react-app,安装好之后了解结构。yarn.lock 定义了当前使用的确切版本。
@@ -389,7 +396,7 @@ return item.length&gt;0?</code></pre></li>
 还需要用到webpack
 
 JSX语法"
-        "wordCount": 1653
+        "wordCount": 1686
     }
 </script>
 
@@ -462,6 +469,26 @@ JSX语法"
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/11/dva/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/dva/">dva</a></p>
+                            <p class="item-title"><a href="/2019/09/11/dva/" class="title">dva笔记</a></p>
+                            <p class="item-date"><time datetime="2019-09-11T08:47:02.660Z" itemprop="datePublished">2019-09-11</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -543,26 +570,6 @@ JSX语法"
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/08/27/md规范/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://cdn.nlark.com/lark/0/2018/png/6815/1536750657227-b4f53ae3-ee09-4b39-b53c-c5b8fbeb8f60.png)" alt="markdown写作规范" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/常用/">常用</a></p>
-                            <p class="item-title"><a href="/2019/08/27/md规范/" class="title">markdown写作规范</a></p>
-                            <p class="item-date"><time datetime="2019-08-27T09:24:19.342Z" itemprop="datePublished">2019-08-27</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -572,7 +579,7 @@ JSX语法"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用/">常用</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/dva/">dva</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用/">常用</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -582,7 +589,7 @@ JSX语法"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">7</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -592,7 +599,7 @@ JSX语法"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Context/">Context</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/key/">key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-router/">react-router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/saga/">saga</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Context/">Context</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/key/">key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-router/">react-router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/saga/">saga</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -602,7 +609,7 @@ JSX语法"
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/key/" style="font-size: 10px;">key</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 10px;">react-router</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/saga/" style="font-size: 10px;">saga</a>
+            <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/key/" style="font-size: 10px;">key</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 10px;">react-router</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/saga/" style="font-size: 10px;">saga</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a>
         </div>
     </div>
 

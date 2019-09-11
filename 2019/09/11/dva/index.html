@@ -6,24 +6,24 @@
     
 
     
-    <title>js中常用数组和字符串方法 | koala&#39;s blog</title>
+    <title>dva笔记 | koala&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Array,String,Javascript">
+        <meta name="keywords" content="react,vue">
     
-    <meta name="description" content="字符串方法首先定义一个字符串： let browserType = &amp;apos;mozilla&amp;apos;; indexOf()找出一个较小的字符串是否存在于一个较大的字符串中 browserType.indexOf(&amp;apos;zilla&amp;apos;);//output:2 browserType.indexOf(&amp;apos;vanilla&amp;apos;);//output:-1 slice(">
-<meta name="keywords" content="Array,String,Javascript">
+    <meta name="description" content="综述  dva= react-router + redux + redux-saga + fetch 简单运用：  12345678import dva from &amp;apos;dva&amp;apos; const App = () =&amp;gt;&amp;lt;div&amp;gt;hello dva&amp;lt;/div&amp;gt;//创建应用 const app = dva();//注册视图 app.router(()=&amp;gt;">
+<meta name="keywords" content="react,vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中常用数组和字符串方法">
-<meta property="og:url" content="https://koala949.github.io/2019/08/27/js-数组字符串方法/index.html">
+<meta property="og:title" content="dva笔记">
+<meta property="og:url" content="https://koala949.github.io/2019/09/11/dva/index.html">
 <meta property="og:site_name" content="koala&#39;s blog">
-<meta property="og:description" content="字符串方法首先定义一个字符串： let browserType = &amp;apos;mozilla&amp;apos;; indexOf()找出一个较小的字符串是否存在于一个较大的字符串中 browserType.indexOf(&amp;apos;zilla&amp;apos;);//output:2 browserType.indexOf(&amp;apos;vanilla&amp;apos;);//output:-1 slice(">
+<meta property="og:description" content="综述  dva= react-router + redux + redux-saga + fetch 简单运用：  12345678import dva from &amp;apos;dva&amp;apos; const App = () =&amp;gt;&amp;lt;div&amp;gt;hello dva&amp;lt;/div&amp;gt;//创建应用 const app = dva();//注册视图 app.router(()=&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-27T03:32:51.843Z">
+<meta property="og:updated_time" content="2019-09-11T09:23:27.223Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js中常用数组和字符串方法">
-<meta name="twitter:description" content="字符串方法首先定义一个字符串： let browserType = &amp;apos;mozilla&amp;apos;; indexOf()找出一个较小的字符串是否存在于一个较大的字符串中 browserType.indexOf(&amp;apos;zilla&amp;apos;);//output:2 browserType.indexOf(&amp;apos;vanilla&amp;apos;);//output:-1 slice(">
+<meta name="twitter:title" content="dva笔记">
+<meta name="twitter:description" content="综述  dva= react-router + redux + redux-saga + fetch 简单运用：  12345678import dva from &amp;apos;dva&amp;apos; const App = () =&amp;gt;&amp;lt;div&amp;gt;hello dva&amp;lt;/div&amp;gt;//创建应用 const app = dva();//注册视图 app.router(()=&amp;gt;">
     
 
     
@@ -128,19 +128,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Javascript/">Javascript</a>
+    <a class="page-title-link" href="/categories/dva/">dva</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-js-数组字符串方法" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-dva" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        js中常用数组和字符串方法
+        dva笔记
         </h1>
     
 
@@ -150,8 +150,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/08/27/js-数组字符串方法/" class="article-date">
-            <time datetime="2019-08-27T03:15:43.884Z" itemprop="datePublished">2019-08-27</time>
+        <a href="/2019/09/11/dva/" class="article-date">
+            <time datetime="2019-09-11T08:47:02.660Z" itemprop="datePublished">2019-09-11</time>
         </a>
     </div>
 
@@ -160,73 +160,43 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Array/">Array</a>, <a class="tag-link" href="/tags/Javascript/">Javascript</a>, <a class="tag-link" href="/tags/String/">String</a>
+        <a class="tag-link" href="/tags/react/">react</a>, <a class="tag-link" href="/tags/vue/">vue</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <a id="more"></a>
+            <h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>  dva= react-router + redux + redux-saga + fetch</p>
+<h3 id="简单运用："><a href="#简单运用：" class="headerlink" title="简单运用："></a>简单运用：</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import dva from &apos;dva&apos;</span><br><span class="line"> const App = () =&gt;&lt;div&gt;hello dva&lt;/div&gt;</span><br><span class="line">//创建应用</span><br><span class="line"> const app = dva();</span><br><span class="line">//注册视图</span><br><span class="line"> app.router(()=&gt; &lt;App/&gt;)</span><br><span class="line">//启动应用</span><br><span class="line"> app.start(&apos;#root&apos;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener">字符串方法</a></h3><p>首先定义一个字符串：</p>
-<pre><code>let browserType = &apos;mozilla&apos;;</code></pre><ul>
-<li><p>indexOf()<br>找出一个较小的字符串是否存在于一个较大的字符串中</p>
-<pre><code>browserType.indexOf(&apos;zilla&apos;);//output:2
-browserType.indexOf(&apos;vanilla&apos;);//output:-1</code></pre></li>
-<li><p>slice()<br>提取字符串中的子字符串，知道开始的位置，以及结束的字符。 </p>
-<pre><code>browserType.slice(0,3); //output:moz  </code></pre><p>如果想知道在某个字符之后提取字符串中的所有剩余字符，则不必包含第二个参数，而只需要包含要从中提取的字符位置 字符串中的其余字符。  </p>
-<pre><code>browserType.slice(2);//output:&apos;zilla&apos;</code></pre></li>
-<li><p>toLowerCase()、toUpperCase()<br>将所有字符分别转换为小写或大写</p>
+<h3 id="dva-api"><a href="#dva-api" class="headerlink" title="dva api"></a>dva api</h3><ol>
+<li><p>model:<br>  ===&gt; namespace每个model的身份标识。<br>  ===&gt; state保存的引用状态数据。<br>  ===&gt; action事件：effects异步操作、reducers同步操作。<br>  ===&gt; connect绑定state到view<br>  ===&gt; dispatch发送action事件到state (此时需要找到对应的model) </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    namespace:&apos;count&apos;,</span><br><span class="line">    state:0,</span><br><span class="line">    reducers:&#123;</span><br><span class="line">        add(state)&#123; return state +1 &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    effects:&#123;</span><br><span class="line">        * addAfter1Second(action,&#123; call,put&#125;)&#123;</span><br><span class="line">            yield call(delay,1000);</span><br><span class="line">            yield put(&#123; type:&apos;add&apos; &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>replace()<br>将字符串中的一个子字符串替换为另一个子字符串,它需要两个参数 - 要被替换下的字符串和要被替换上的字符串。</p>
-<pre><code>browserType = browserType.replace(&apos;moz&apos;,&apos;van&apos;);。</code></pre></li>
-</ul>
-<h3 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">数组方法</a></h3><p>介绍一些相当有用的数组方法，这些方法允许我们将字符串拆分为字符串数组，反之亦然，以及添加或删除元素。</p>
-<ol>
-<li>字符串和数组之间的转换</li>
+<li><p>对比vue项目<br> Vue项目 = vuex + vue-router + axios<br> React项目 = redux +  react-router + redux-saga +fetch = dva   </p>
+<p> Vue的路由模式有hash,history,默认hash，dva也是，默认hashHistory，可选BrowserHistory和 createMemoryHistory，因为本质上还是单页，使用BrowserHistory还需要配置服务器Nginx或者Tomcat。<br> 默认dva工程下需要 npm install history 才可以切换到browserHistory模式。</p>
+<p> Vue一般接口调用封装接口然后再组件内调用，dva选择在model中实现，这是他们模式的最大区别，model能进行异步操作，vuex的model只能进行同步操作，同步操作在组件内完成。</p>
+</li>
 </ol>
-<ul>
-<li><p>split():<br>作为字符串方法，我们提供一个参数，作为字符串分割的字符，并返回分隔符之间的字串，作为数组中的项。</p>
-<p>(1)创建字符串</p>
-<pre><code>let myData = &apos;Manchester,London,liverpool,leeds&apos;</code></pre><p>  (2)用逗号分隔：</p>
-<pre><code>let myArray = myData.split(&apos;,&apos;);
-console.log(myArray)</code></pre><p>(3)可以使用<code>join()</code> 方法进行相反的操作</p>
-<pre><code>let myNewString = myArray.join(&apos;,&apos;);</code></pre></li>
-<li><p>toString():<br>将数组转换为字符串的另一种方法，可以比<code>join()</code>更简单，因为它不需要一个参数，但更有限制，使用<code>join()</code>可以指定不同的分隔符</p>
-<pre><code>let dogNames = [&quot;Rocket&quot;,&quot;Flash&quot;,&quot;Bella&quot;,&quot;Slugger&quot;];
-dogNames.toString(); //Rocket,Flash,Bella,Slugger</code></pre></li>
-</ul>
-<ol start="2">
-<li>添加和删除数组项</li>
+<h3 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h3><ol>
+<li><p>Vue-router:需要时才渲染页面。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">const routers=[</span><br><span class="line">    &#123;</span><br><span class="line">        path:&apos;/travelList&apos;,</span><br><span class="line">        name:&apos;travelList&apos;,</span><br><span class="line">        component: resolve =&gt; require([&apos;@/views/travelApplication/travelList&apos;],resolve),</span><br><span class="line">        meta:&#123;</span><br><span class="line">            keepAlive:true,</span><br><span class="line">            title:&apos;申请单列表页&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path:&apos;/travelList/travelDetail&apos;,</span><br><span class="line">        name:&apos;travelDetail&apos;,</span><br><span class="line">        component: resolve =&gt; require([&apos;@/views/travelApplication/travelDetail&apos;],resolve),</span><br><span class="line">        meta:&#123;</span><br><span class="line">            keepAlive:true,</span><br><span class="line">            title:&apos;差旅申请单&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">return (</span><br><span class="line">    &lt;Router history = &#123; history &#125;&gt;</span><br><span class="line">      &lt;Switch&gt;</span><br><span class="line">      &#123;</span><br><span class="line">          routers.map((&#123;path,name,component&#125;) =&gt;&#123;</span><br><span class="line">              return (</span><br><span class="line">                  &lt;Route path=&#123;path&#125; key=&#123;name&#125; exact component=&#123;component&#125;/&gt;</span><br><span class="line">              )</span><br><span class="line">          &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">      &lt;/Switch&gt;</span><br><span class="line">    &lt;/Router&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>dva<br>(1)常规模式： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line">import &#123; Router,Route,Switch &#125; from &apos;dva/router&apos;</span><br><span class="line"></span><br><span class="line">import IndexPage from &apos;./routers/IndexPage&apos;</span><br><span class="line">import Category from &apos;./routers/Category&apos;</span><br><span class="line"></span><br><span class="line">function RouterConfig(&#123;history,app&#125;)&#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;Router history=&#123;history&#125;&gt;</span><br><span class="line">            &lt;Switch&gt;</span><br><span class="line">                &lt;Route  path=&apos;/&apos; exact component=&#123;IndexPage&#125;/&gt;</span><br><span class="line">                &lt;Route path=&apos;/category&apos; exact component=&#123;category&#125;&gt;</span><br><span class="line">            &lt;/Switch&gt;</span><br><span class="line">        &lt;/Router&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line">export default RouterConfig</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-<ul>
-<li><p>push()<br>需要添加一个或多个到数组末尾的元素时使用</p>
-<pre><code>myArray.push(&apos;Cardiff&apos;);</code></pre></li>
-<li><p>pop()<br>从数组中删除最后一个元素，直接使用</p>
-<pre><code>myArray.pop();</code></pre></li>
-<li><p>unshift()、 shift()<br>从功能上与 push() 和 pop() 完全相同，只是它们分别作用于数组的开始，而不是结尾。</p>
-</li>
-</ul>
-<p>3.练习过的</p>
-<ul>
-<li><p>map()：<br>创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。map 不修改调用它的原数组本身。</p>
-<pre><code>var new_array = arr.map(function callback(currentValue[   index[, array]]) { 
-  }[, thisArg])</code></pre><p>callback:生成新数组元素的函数，使用三个参数：<br>currentValue:callback 数组中正在处理的当前元素。<br>index可选:callback 数组中正在处理的当前元素的索引。<br>array可选:callback map 方法被调用的数组。<br>thisArg可选:执行 callback 函数时使用的this 值。  </p>
-</li>
-<li><p>every():<br>测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。</p>
-<pre><code>arr.every(callback[, thisArg])  </code></pre><p>例子:</p>
-<pre><code>function isBigEnough(element, index, array) {
-return element &gt;= 10;
-}
-[12, 5, 8, 130, 44].every(isBigEnough);   // false
-[12, 5, 8, 130, 44].every(x =&gt; x &gt;= 10); //箭头函数 false</code></pre></li>
-<li><p>some()<br>测试是否至少有一个元素可以通过被提供的函数方法。该方法返回一个Boolean类型的值。</p>
-</li>
-<li><p>filter()<br>创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。 </p>
-<pre><code>var newArray = arr.filter(callback(element[, index[, array]])[, thisArg])  
-const result = words.filter(word =&gt; word.length &gt; 6);</code></pre></li>
-</ul>
+<p>(2)如果要懒加载,加快渲染速度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line">import &#123; Router,Route,Switch &#125; from &apos;dva/router&apos;</span><br><span class="line">import dynamic from &apos;dva/dynamic&apos;</span><br><span class="line"></span><br><span class="line">function RouterConfig(&#123; history,app &#125;)&#123;</span><br><span class="line">    const IndexPage = dynamic(&#123;</span><br><span class="line">        app,</span><br><span class="line">        component:()=&gt; import(&apos;./routers/IndexPage&apos;)</span><br><span class="line">    &#125;)</span><br><span class="line">    const Category = dynamic(&#123;</span><br><span class="line">        app,</span><br><span class="line">        component:()=&gt; import(&apos;./routes/Category&apos;)</span><br><span class="line">    &#125;)</span><br><span class="line">    return (</span><br><span class="line">        &lt;Router history=&#123;history&#125;&gt;</span><br><span class="line">            &lt;Switch&gt;</span><br><span class="line">                &lt;Route  path=&apos;/&apos; exact component=&#123;IndexPage&#125;/&gt;</span><br><span class="line">                &lt;Route path=&apos;/category&apos; exact component=&#123;category&#125;&gt;</span><br><span class="line">            &lt;/Switch&gt;</span><br><span class="line">        &lt;/Router&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p> (3)  <code>history={history}</code>是在<code>app.router(require(&#39;./router&#39;).default);</code> 定义router组件时传入的参数props之一，dva router 自动注入的。</p>
+<p> (4)当component无法满足需求时，比如需要外部样式Layout，可用render。<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">routes.map((&#123; path, name, layout,...dynamics&#125;)=&gt;&#123;</span><br><span class="line">    const Component = dynamic(&#123;app, ...dynamics&#125;)</span><br><span class="line">    return (</span><br><span class="line">        &lt;Route path=&#123;path&#125; key=&#123;name&#125; exact render=&#123; (props) =&gt;&#123;</span><br><span class="line">            if(layout)&#123;</span><br><span class="line">                return (</span><br><span class="line">                    &lt;Layout&gt;</span><br><span class="line">                      &lt;Component &#123;...props&#125; /&gt;</span><br><span class="line">                    &lt;/Layout&gt;</span><br><span class="line">                )</span><br><span class="line">            &#125;</span><br><span class="line">            return (&lt;Component &#123;...props&#125;/&gt;)</span><br><span class="line">        &#125;&#125;&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="dva中effects"><a href="#dva中effects" class="headerlink" title="dva中effects"></a>dva中effects</h3><p>通常I/O操作，数据库读写，以key/value格式定义effect,不直接修改state，通常通过generate yield以及saga里面的常用call，put, takeEvery,takeLatest,take,将异步转为同步写法。</p>
+<p>generator函数：yield中断：<br>===&gt;call 触发异步操作<br>===&gt;put 相当于 dispatch 触发reducer 改变state<br>===&gt;select 从state中获取相关的数据<br>===&gt;takeEvery 监听action的每次变化执行（默认）<br>===&gt;takeLatest监听action最近一次的变化<br>===&gt;take 监听一次action留着，后面执行动作。   </p>
+<p>任务并行，任务竞争。</p>
 
         </div>
         <footer class="article-footer">
@@ -234,7 +204,7 @@ const result = words.filter(word =&gt; word.length &gt; 6);</code></pre></li>
 
 
 
-    <a data-url="https://koala949.github.io/2019/08/27/js-数组字符串方法/" data-id="ck0f24c5k000ae4vpzi55prnv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koala949.github.io/2019/09/11/dva/" data-id="ck0f24c520000e4vp5f9no9jt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -304,23 +274,17 @@ const result = words.filter(word =&gt; word.length &gt; 6);</code></pre></li>
             "@type": "Person",
             "name": "XHY"
         },
-        "headline": "js中常用数组和字符串方法",
+        "headline": "dva笔记",
         "image": "https://koala949.github.io",
-        "keywords": "Array String Javascript",
-        "genre": "Javascript",
-        "datePublished": "2019-08-27",
-        "dateCreated": "2019-08-27",
-        "dateModified": "2019-08-27",
-        "url": "https://koala949.github.io/2019/08/27/js-数组字符串方法/",
-        "description": "
-
-字符串方法首先定义一个字符串：
-let browserType = &apos;mozilla&apos;;
-indexOf()找出一个较小的字符串是否存在于一个较大的字符串中
-browserType.indexOf(&apos;zilla&apos;);//output:2
-browserType.indexOf(&apos;vanilla&apos;);//output:-1
-slice("
-        "wordCount": 120
+        "keywords": "react vue",
+        "genre": "dva",
+        "datePublished": "2019-09-11",
+        "dateCreated": "2019-09-11",
+        "dateModified": "2019-09-11",
+        "url": "https://koala949.github.io/2019/09/11/dva/",
+        "description": "综述  dva= react-router + redux + redux-saga + fetch
+简单运用：  12345678import dva from &apos;dva&apos; const App = () =&gt;&lt;div&gt;hello dva&lt;/div&gt;//创建应用 const app = dva();//注册视图 app.router(()=&gt;"
+        "wordCount": 1145
     }
 </script>
 
@@ -368,20 +332,10 @@ slice("
         
 <nav id="article-nav">
     
-        <a href="/2019/08/27/Mocha测试/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            es6练习
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/08/26/react-基础/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/09/10/react-router/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">react学习笔记(一)</p>
+        <p class="article-nav-title">react学习笔记(四)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -595,7 +549,7 @@ slice("
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://koala949.github.io/2019/08/27/js-数组字符串方法/';
+    var disqus_url = 'https://koala949.github.io/2019/09/11/dva/';
     
     (function() {
     var dsq = document.createElement('script');

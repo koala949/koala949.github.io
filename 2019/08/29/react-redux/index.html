@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="koala&#39;s blog">
 <meta property="og:description" content="redux学习1.安装npm install --save reduxnpm install --save react-redux  react 绑定库 2.三大原则(1)单一数据源整个应用的state被存储在一棵对象树中，并且这个对象树只存在于唯一一个store中。   { visibilityFilter: &amp;apos;SHOW_ALL&amp;apos;, todos: [     {     te">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-10T08:47:02.632Z">
+<meta property="og:updated_time" content="2019-09-11T02:56:41.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react学习笔记(二)">
 <meta name="twitter:description" content="redux学习1.安装npm install --save reduxnpm install --save react-redux  react 绑定库 2.三大原则(1)单一数据源整个应用的state被存储在一棵对象树中，并且这个对象树只存在于唯一一个store中。   { visibilityFilter: &amp;apos;SHOW_ALL&amp;apos;, todos: [     {     te">
@@ -213,6 +213,13 @@ return state
 }</code></pre><h3 id="5-Store"><a href="#5-Store" class="headerlink" title="5.Store"></a>5.Store</h3><p>Store 有以下职责：<br>  维持应用的 state；<br>  提供 <code>getState()</code> 方法获取 state；<br>  提供 <code>dispatch(action)</code> 方法更新 state；<br>  通过 <code>subscribe(listener)</code>注册监听器;<br>  通过 <code>subscribe(listener)</code>返回的函数注销监听器。   </p>
 <h3 id="6-数据流"><a href="#6-数据流" class="headerlink" title="6.数据流"></a>6.数据流</h3><p>redux应用中数据的生命周期遵循下面4个步骤：<br>(1)调用<code>store.dispatch(action)</code><br>(2)redux store 调用传入的reducer函数。<br>(3)根 reducer 应该把多个子 reducer 输出合并成一个单一的 state 树。<br>(4)Redux store 保存了根 reducer 返回的完整 state 树。  </p>
 <h3 id="整体步骤："><a href="#整体步骤：" class="headerlink" title="整体步骤："></a>整体步骤：</h3><p>===&gt; 定义规则<br>===&gt; 计算规则生成store<br>===&gt; 定义数据(即state)变化之后的派发规则<br>===&gt; 触发数据变化。</p>
+<h3 id="几个点："><a href="#几个点：" class="headerlink" title="几个点："></a>几个点：</h3><ul>
+<li><p>bindActionCreator的使用：<br>bindActionCreator(dealAction,diapatch)函数返回的是一个对象，调用这个对象中（对应相应action）的属性，就会自动创建aciton并dispatch。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function mapDispatchToProps(dispatch)&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">      userInfoActions: bindActionCreators(userInfoActions,dispatch)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该函数接受两个参数,其中dealActions表示actionCreateor函数，如果有多个actionCreator函数，可以放在dealAction.js文件中一次引入      </p>
+</li>
+</ul>
 <h3 id="8-工具安装："><a href="#8-工具安装：" class="headerlink" title="8.工具安装："></a>8.工具安装：</h3><p>redux-devtools：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const store = createStore(rootReducer,initialState,</span><br><span class="line">       window.devToolsExtension ? window.devToolsExtension(): undefined</span><br><span class="line">       )</span><br></pre></td></tr></table></figure>
 
@@ -227,7 +234,7 @@ return state
 
 
 
-    <a data-url="https://koala949.github.io/2019/08/29/react-redux/" data-id="ck0dlvn600005ykvp09bz7h0o" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koala949.github.io/2019/08/29/react-redux/" data-id="ck0f24c5g0006e4vpurlp907p" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -303,7 +310,7 @@ return state
         "genre": "react",
         "datePublished": "2019-08-29",
         "dateCreated": "2019-08-29",
-        "dateModified": "2019-09-10",
+        "dateModified": "2019-09-11",
         "url": "https://koala949.github.io/2019/08/29/react-redux/",
         "description": "redux学习1.安装npm install --save reduxnpm install --save react-redux  react 绑定库
 2.三大原则(1)单一数据源整个应用的state被存储在一棵对象树中，并且这个对象树只存在于唯一一个store中。  
@@ -312,7 +319,7 @@ visibilityFilter: &apos;SHOW_ALL&apos;,
 todos: [
     {
     te"
-        "wordCount": 1215
+        "wordCount": 1252
     }
 </script>
 
@@ -395,6 +402,26 @@ todos: [
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/09/11/dva/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/dva/">dva</a></p>
+                            <p class="item-title"><a href="/2019/09/11/dva/" class="title">dva笔记</a></p>
+                            <p class="item-date"><time datetime="2019-09-11T08:47:02.660Z" itemprop="datePublished">2019-09-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/09/10/react-router/" class="thumbnail">
     
     
@@ -472,26 +499,6 @@ todos: [
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/08/27/md规范/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://cdn.nlark.com/lark/0/2018/png/6815/1536750657227-b4f53ae3-ee09-4b39-b53c-c5b8fbeb8f60.png)" alt="markdown写作规范" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/常用/">常用</a></p>
-                            <p class="item-title"><a href="/2019/08/27/md规范/" class="title">markdown写作规范</a></p>
-                            <p class="item-date"><time datetime="2019-08-27T09:24:19.342Z" itemprop="datePublished">2019-08-27</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -501,7 +508,7 @@ todos: [
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用/">常用</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/dva/">dva</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用/">常用</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -511,7 +518,7 @@ todos: [
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">7</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -521,7 +528,7 @@ todos: [
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Context/">Context</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/key/">key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-router/">react-router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/saga/">saga</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Context/">Context</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/key/">key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-router/">react-router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/saga/">saga</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -531,7 +538,7 @@ todos: [
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/key/" style="font-size: 10px;">key</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 10px;">react-router</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/saga/" style="font-size: 10px;">saga</a>
+            <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/key/" style="font-size: 10px;">key</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 10px;">react-router</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/saga/" style="font-size: 10px;">saga</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a>
         </div>
     </div>
 
