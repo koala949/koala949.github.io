@@ -12,18 +12,18 @@
     
         <meta name="keywords" content="git">
     
-    <meta name="description" content="从远程拉取代码及相关操作git clone &amp;lt;remote_url&amp;gt;   git checkout –b &amp;lt;newBranch&amp;gt;   git add &amp;lt;file&amp;gt;   git commit –m “commit information”   git pull origin &amp;lt;remote_branch&amp;gt;   git push origin &amp;lt;l">
+    <meta name="description" content="从远程拉取代码及相关操作git clone &amp;lt;remote_url&amp;gt;   git checkout –b &amp;lt;newBranch&amp;gt;  git add &amp;lt;file&amp;gt;   git commit –m “commit information”   git pull origin &amp;lt;remote_branch&amp;gt;   git push origin &amp;lt;lo">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git命令">
 <meta property="og:url" content="https://koala949.github.io/2019/08/28/git-操作/index.html">
 <meta property="og:site_name" content="koala&#39;s blog">
-<meta property="og:description" content="从远程拉取代码及相关操作git clone &amp;lt;remote_url&amp;gt;   git checkout –b &amp;lt;newBranch&amp;gt;   git add &amp;lt;file&amp;gt;   git commit –m “commit information”   git pull origin &amp;lt;remote_branch&amp;gt;   git push origin &amp;lt;l">
+<meta property="og:description" content="从远程拉取代码及相关操作git clone &amp;lt;remote_url&amp;gt;   git checkout –b &amp;lt;newBranch&amp;gt;  git add &amp;lt;file&amp;gt;   git commit –m “commit information”   git pull origin &amp;lt;remote_branch&amp;gt;   git push origin &amp;lt;lo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-10T08:57:54.546Z">
+<meta property="og:updated_time" content="2019-09-22T05:00:27.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令">
-<meta name="twitter:description" content="从远程拉取代码及相关操作git clone &amp;lt;remote_url&amp;gt;   git checkout –b &amp;lt;newBranch&amp;gt;   git add &amp;lt;file&amp;gt;   git commit –m “commit information”   git pull origin &amp;lt;remote_branch&amp;gt;   git push origin &amp;lt;l">
+<meta name="twitter:description" content="从远程拉取代码及相关操作git clone &amp;lt;remote_url&amp;gt;   git checkout –b &amp;lt;newBranch&amp;gt;  git add &amp;lt;file&amp;gt;   git commit –m “commit information”   git pull origin &amp;lt;remote_branch&amp;gt;   git push origin &amp;lt;lo">
     
 
     
@@ -168,11 +168,13 @@
         
         <div class="article-entry" itemprop="articleBody">
             <h3 id="从远程拉取代码及相关操作"><a href="#从远程拉取代码及相关操作" class="headerlink" title="从远程拉取代码及相关操作"></a>从远程拉取代码及相关操作</h3><pre><code>git clone &lt;remote_url&gt;  
-git checkout –b &lt;newBranch&gt;  
+git checkout –b &lt;newBranch&gt; 
 git add &lt;file&gt;  
 git commit –m “commit information”  
 git pull origin &lt;remote_branch&gt;  
-git push origin &lt;local_branch&gt;:&lt;remote_branch&gt; </code></pre><h3 id="撤销操作分三种情况："><a href="#撤销操作分三种情况：" class="headerlink" title="撤销操作分三种情况："></a>撤销操作分三种情况：</h3><p>第一种：没有执行add指令<br>    <code>git checkout -- &lt;file&gt;</code><br>第二种：执行了add指令，未执行commit指令<br>   <code>git reset HEAD &lt;file&gt;</code> 暂存区内容回退<br>   <code>git checkout -- &lt;file&gt;</code> 丢弃工作区修改<br>第三种：执行了commit指令，未提交到远程<br>   <code>git reset --hard &lt;commit_id&gt;</code>版本回退</p>
+git push origin &lt;local_branch&gt;:&lt;remote_branch&gt; 
+
+ git clone -b dev  仓库地址 </code></pre><h3 id="撤销操作分三种情况："><a href="#撤销操作分三种情况：" class="headerlink" title="撤销操作分三种情况："></a>撤销操作分三种情况：</h3><p>第一种：没有执行add指令<br>    <code>git checkout -- &lt;file&gt;</code><br>第二种：执行了add指令，未执行commit指令<br>   <code>git reset HEAD &lt;file&gt;</code> 暂存区内容回退<br>   <code>git checkout -- &lt;file&gt;</code> 丢弃工作区修改<br>第三种：执行了commit指令，未提交到远程<br>   <code>git reset --hard &lt;commit_id&gt;</code>版本回退</p>
 <h3 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h3><p>  <code>git log</code><br>  <code>git log --pretty=oneline</code>  一行显示</p>
 <h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p>  <code>git reset --hard &lt;commit_id&gt;</code><br> (HEAD指向当前版本，HEAD^上个版本，HEAD^^上上个版本……)<br>  <code>git reset --soft e79fcfb</code>: 回退到某次提交，并且把commit的内容撤回到暂存区</p>
 <h3 id="重返未来"><a href="#重返未来" class="headerlink" title="重返未来"></a>重返未来</h3><p> <code>git reflog</code>查看命令历史</p>
@@ -189,6 +191,10 @@ git push origin &lt;local_branch&gt;:&lt;remote_branch&gt; </code></pre><h3 id="
 <h3 id="查看stash内容"><a href="#查看stash内容" class="headerlink" title="查看stash内容"></a>查看stash内容</h3><p>  <code>git stash list</code> 存储列表</p>
 <h3 id="恢复工作现场"><a href="#恢复工作现场" class="headerlink" title="恢复工作现场"></a>恢复工作现场</h3><p>方式一：<br>  <code>git stash apply</code> 仅恢复<br>  <code>git stash apply stash@{0}</code>: 应用某次储藏(不会删除那一次)<br>  <code>git stash drop</code> 删除<br>方式二：<br>  <code>git stash pop</code> 恢复且删除，（应用并弹出栈顶的储藏）</p>
 <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>==&gt; git branch xhy 创建分支 (相当于复制一份)<br>==&gt; git branch 查看本地分支<br>==&gt; git branch -a 查看所有分支<br>==&gt; git checkout xhy 切换分支<br>==&gt; 修改文件后<br>==&gt; git add .<br>==&gt; git commit -m “add”<br>==&gt; git checkout master<br>==&gt; git merge xhy<br>==&gt; git pull<br>==&gt; git push<br>==&gt; git checkout xhy<br>==&gt; git pull origin master ：推送到远程分支之后，就要回到你自己的分支继续开发，为了获取到远程分支的最新更改，所以要重新pull一下</p>
+<h2 id="练习2"><a href="#练习2" class="headerlink" title="练习2"></a>练习2</h2><p>(1) 打包app文件<br>   git stash暂存修改，git checkout master切换分支，npm run build生成dist文件<br>   git checkout xhy-sns<br>   git stash pop   </p>
+<p>(2) 拉取dev分支代码：git clone -b dev  仓库地址  </p>
+<p>(3) 提交代码(尽量不要改同一个文件，解决冲突太耗时间了)<br>    add、commit 、checkout dev 、git pull、 git merge xhy-sns、git push<br>   最后切回自己的分支，然后git pull origin dev</p>
+<p>(4) git branch –set-upstream master origin/dev 关联远程分支</p>
 <h2 id="写在后面："><a href="#写在后面：" class="headerlink" title="写在后面："></a>写在后面：</h2><h3 id="hexo博客命令"><a href="#hexo博客命令" class="headerlink" title="hexo博客命令"></a>hexo博客命令</h3><p><code>hexo init [folder]</code> 新建一个网站<br><code>hexo new [layout] &lt;title&gt;</code>创建一篇新文章<br><code>hexo sever或hexo s</code> 启动服务器<br><code>hexo clean</code> 清除缓存文件 (db.json) 和已生成的静态文件 (public)<br><code>hexo generate或hexo g</code> 生成静态文件<br><code>hexo deploy或hexo d</code>部署网站<br><code>hexo migrate &lt;type&gt;</code>从其他博客系统迁移内容</p>
 
         </div>
@@ -197,7 +203,7 @@ git push origin &lt;local_branch&gt;:&lt;remote_branch&gt; </code></pre><h3 id="
 
 
 
-    <a data-url="https://koala949.github.io/2019/08/28/git-操作/" data-id="ck0f24c580001e4vp1kjsvjr4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koala949.github.io/2019/08/28/git-操作/" data-id="ck0ujknch00005gvp65k4ox58" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -273,15 +279,15 @@ git push origin &lt;local_branch&gt;:&lt;remote_branch&gt; </code></pre><h3 id="
         "genre": "常用",
         "datePublished": "2019-08-28",
         "dateCreated": "2019-08-28",
-        "dateModified": "2019-09-10",
+        "dateModified": "2019-09-22",
         "url": "https://koala949.github.io/2019/08/28/git-操作/",
         "description": "从远程拉取代码及相关操作git clone &lt;remote_url&gt;  
-git checkout –b &lt;newBranch&gt;  
+git checkout –b &lt;newBranch&gt; 
 git add &lt;file&gt;  
 git commit –m “commit information”  
 git pull origin &lt;remote_branch&gt;  
-git push origin &lt;l"
-        "wordCount": 333
+git push origin &lt;lo"
+        "wordCount": 398
     }
 </script>
 
@@ -364,6 +370,66 @@ git push origin &lt;l"
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/09/22/vue-项目笔记/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/vue/">vue</a></p>
+                            <p class="item-title"><a href="/2019/09/22/vue-项目笔记/" class="title">vue项目(一)</a></p>
+                            <p class="item-date"><time datetime="2019-09-22T04:07:39.383Z" itemprop="datePublished">2019-09-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/22/vue-全家桶/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/vue/">vue</a></p>
+                            <p class="item-title"><a href="/2019/09/22/vue-全家桶/" class="title">vue学习(二)</a></p>
+                            <p class="item-date"><time datetime="2019-09-22T03:58:40.213Z" itemprop="datePublished">2019-09-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/20/vue-基础/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/vue/">vue</a></p>
+                            <p class="item-title"><a href="/2019/09/20/vue-基础/" class="title">vue学习(一)</a></p>
+                            <p class="item-date"><time datetime="2019-09-20T07:05:07.793Z" itemprop="datePublished">2019-09-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/09/11/dva/" class="thumbnail">
     
     
@@ -401,66 +467,6 @@ git push origin &lt;l"
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/08/29/react-saga/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/react/">react</a></p>
-                            <p class="item-title"><a href="/2019/08/29/react-saga/" class="title">react学习笔记(三)</a></p>
-                            <p class="item-date"><time datetime="2019-08-29T11:09:05.841Z" itemprop="datePublished">2019-08-29</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/08/29/react-redux/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/react/">react</a></p>
-                            <p class="item-title"><a href="/2019/08/29/react-redux/" class="title">react学习笔记(二)</a></p>
-                            <p class="item-date"><time datetime="2019-08-29T02:36:31.897Z" itemprop="datePublished">2019-08-29</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/08/28/git-操作/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/常用/">常用</a></p>
-                            <p class="item-title"><a href="/2019/08/28/git-操作/" class="title">git命令</a></p>
-                            <p class="item-date"><time datetime="2019-08-28T12:32:56.283Z" itemprop="datePublished">2019-08-28</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -470,7 +476,7 @@ git push origin &lt;l"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/dva/">dva</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用/">常用</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/dva/">dva</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用/">常用</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -480,7 +486,7 @@ git push origin &lt;l"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">7</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -490,7 +496,7 @@ git push origin &lt;l"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Context/">Context</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/key/">key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-router/">react-router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/saga/">saga</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Axios/">Axios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Context/">Context</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/key/">key</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-router/">react-router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux/">redux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/router/">router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/saga/">saga</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vuex/">vuex</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -500,7 +506,7 @@ git push origin &lt;l"
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/key/" style="font-size: 10px;">key</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 10px;">react-router</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/saga/" style="font-size: 10px;">saga</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a>
+            <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Axios/" style="font-size: 10px;">Axios</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/key/" style="font-size: 10px;">key</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-router/" style="font-size: 10px;">react-router</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/router/" style="font-size: 10px;">router</a> <a href="/tags/saga/" style="font-size: 10px;">saga</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/vuex/" style="font-size: 10px;">vuex</a>
         </div>
     </div>
 
